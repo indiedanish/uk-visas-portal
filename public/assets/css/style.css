@@ -13895,3 +13895,9 @@ td.fc-header-center {
 }
 
 /* === footer css end === */
+
+.modal-content {
+  background-color: blue; /* Apply blue background */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); /* Apply drop shadow */
+}
+

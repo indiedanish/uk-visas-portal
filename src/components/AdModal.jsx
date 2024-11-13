@@ -12,15 +12,25 @@ const DeviceModal = ({
   const [adData, setAdData] = useState({
     title: "",
     deviceId: "",
-    description: "",
     status: "active",
     images: [],
-    startDate: "",
-    endDate: "",
+    startTime: "",
+    endTime: "",
+    displayFrequency: [],
   });
 
   const [devices, setDevices] = useState(null);
   const fileInputRef = useRef(null);
+
+  const daysOfWeek = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
 
   useEffect(() => {
     const fetchDevices = async () => {
@@ -38,22 +48,22 @@ const DeviceModal = ({
     if (actionType === "edit" && initialData) {
       setAdData({
         title: initialData.title || "",
-        description: initialData.description || "",
         deviceId: initialData.deviceId || "",
         status: initialData.status || "active",
         images: initialData.content || [],
-        startDate: initialData.startDate || "",
-        endDate: initialData.endDate || "",
+        startTime: initialData.startTime || "",
+        endTime: initialData.endTime || "",
+        displayFrequency: initialData.displayFrequency || "",
       });
     } else if (actionType === "add") {
       setAdData({
         title: "",
-        description: "",
         deviceId: "",
         status: "active",
         images: [],
-        startDate: "",
-        endDate: "",
+        startTime: "",
+        endTime: "",
+        displayFrequency: [],
       });
     }
   }, [actionType, initialData]);
@@ -92,6 +102,15 @@ const DeviceModal = ({
     });
   };
 
+  const handleCheckboxChange = (day) => {
+    setAdData((prevData) => {
+      const newDisplayFrequency = prevData.displayFrequency.includes(day)
+        ? prevData.displayFrequency.filter((d) => d !== day)
+        : [...prevData.displayFrequency, day];
+      return { ...prevData, displayFrequency: newDisplayFrequency };
+    });
+  };
+
   const renderTextInput = (
     label,
     name,
@@ -114,14 +133,17 @@ const DeviceModal = ({
       />
     </div>
   );
-
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    return new Date(dateString).toISOString().split('T')[0];
+  };
   const renderDateInput = (label, name, value) => (
     <div className="mb-20">
       <label className="form-label fw-semibold text-primary-light text-sm mb-8">
         {label}
       </label>
       <input
-        type="date"
+        type="time"
         name={name}
         className="form-control radius-8"
         value={value}
@@ -189,25 +211,50 @@ const DeviceModal = ({
                       "Enter Title",
                       true
                     )}
-                    {renderTextarea(
-                      "Description",
-                      "description",
-                      adData.description,
-                      "Write some text"
-                    )}
+
+                    {/* Display Frequency Checkbox Group */}
+                    <div className="col-12 mb-20">
+                      <label className="form-label fw-semibold text-primary-light text-sm mb-8">
+                        Display Frequency
+                      </label>
+                      <div className="d-flex align-items-center flex-wrap gap-2">
+                        {daysOfWeek.map((day) => (
+                          <div key={day} className="form-check d-flex align-items-center gap-1">
+                            <input
+                              type="checkbox"
+                              name="displayFrequency"
+                              value={day}
+                              checked={adData.displayFrequency.includes(day)}
+                              onChange={() => handleCheckboxChange(day)}
+                              className="form-check-input"
+                            />
+                            <label className="form-check-label">{day}</label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
                     <div className="d-flex flex-row gap-3">
+                      
                       {renderDateInput(
                         "Start Date",
-                        "startDate",
-                        adData.startDate
+                        "startTime",
+                        adData.startTime
                       )}
-                      {renderDateInput("End Date", "endDate", adData.endDate)}
+                      {renderDateInput("End Date", "endTime", adData.endTime)}
                     </div>
 
                     <div className="form-check align-items-center gap-2">
                       <label htmlFor="device-select">Choose a device:</label>
-                      <select value={adData.deviceId} onChange={handleDeviceChange} id="device-select" className="form-control">
+                      <select
+                        value={adData.deviceId}
+                        onChange={handleDeviceChange}
+                        id="device-select"
+                        className="form-control"
+                      >
+                        <option value="" disabled>
+                          Select a device
+                        </option>
                         {devices &&
                           devices.map((device, index) => (
                             <option key={index} value={device.id}>
@@ -216,6 +263,7 @@ const DeviceModal = ({
                           ))}
                       </select>
                     </div>
+
                     <div className="col-12 mb-20">
                       <label className="form-label fw-semibold text-primary-light text-sm mb-8">
                         Status
