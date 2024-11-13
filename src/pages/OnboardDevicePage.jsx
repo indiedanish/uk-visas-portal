@@ -28,7 +28,7 @@ const OnboardDevice = () => {
               <div className="qr-container d-flex justify-content-center">
                 {/* Use QRCodeSVG to display the QR code */}
                 <QRCodeSVG
-                  value={`${apiConfig.baseURL}sign-in`}
+                  value={`${window.location.origin}/sign-in`}
                   size={256}
                   level="H" // Error correction level
                 />
