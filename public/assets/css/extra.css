@@ -199,7 +199,7 @@ table.dataTable td.dt-type-date {
   height: 100%;
   background-color: #000;
   opacity: 0.65;
-  transition: all 0.3s;
+  transition: all 0.2s;
   z-index: 2;
 }
 

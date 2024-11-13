@@ -66,6 +66,7 @@ import PricingPage from "./pages/PricingPage";
 import ProgressPage from "./pages/ProgressPage";
 import RadioPage from "./pages/RadioPage";
 import RoleAccessPage from "./pages/RoleAccessPage";
+import OnboardDevicePage from "./pages/OnboardDevicePage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import StarRatingPage from "./pages/StarRatingPage";
@@ -124,6 +125,7 @@ function App() {
           <Route exact path="/devices" element={<PrivateRoute element={DevicesListPage} />} />
           <Route exact path="/ads" element={<PrivateRoute element={AdsListPage} />} />
           <Route exact path="/role-access" element={<PrivateRoute element={RoleAccessPage} />} />
+          <Route exact path="/onboard-device" element={<PrivateRoute element={OnboardDevicePage} />} />
 
 
 

@@ -116,13 +116,38 @@ const MasterLayout = ({ children }) => {
         <div className="sidebar-menu-area">
           <ul className="sidebar-menu" id="sidebar-menu">
             <li className="dropdown">
-              <Link to="#">
+              <Link to="/dashboard">
                 <Icon
                   icon="solar:home-smile-angle-outline"
                   className="menu-icon"
                 />
                 <span>Dashboard</span>
               </Link>
+
+              <ul className="sidebar-submenu">
+                <li>
+                  <NavLink
+                    to="/dashboard"
+                    className={(navData) =>
+                      navData.isActive ? "active-page" : ""
+                    }
+                  >
+                    <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
+                    Statistics
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+
+            <li className="dropdown">
+              <Link to="/devices">
+                <Icon
+                  icon="solar:home-smile-angle-outline"
+                  className="menu-icon"
+                />
+                <span>Devices</span>
+              </Link>
+
               <ul className="sidebar-submenu">
                 <li>
                   <NavLink
@@ -132,18 +157,18 @@ const MasterLayout = ({ children }) => {
                     }
                   >
                     <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
-                    Devices
+                    List
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to="/ads"
+                    to="/onboard-device"
                     className={(navData) =>
                       navData.isActive ? "active-page" : ""
                     }
                   >
                     <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />
-                    Advertisements
+                    OnBoard
                   </NavLink>
                 </li>
               </ul>

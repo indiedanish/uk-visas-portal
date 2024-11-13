@@ -24,7 +24,7 @@
     .file-upload {
         width: 100%;
         display: flex;
-        transition: all 0.3s;
+        transition: all 0.2s;
         text-align: center;
         >div {
             border: 1px solid #ddd;

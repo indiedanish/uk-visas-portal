@@ -349,7 +349,7 @@
   box-sizing: border-box;
   border-style: solid;
   border-width: 0;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 html {
@@ -382,7 +382,7 @@ body::after {
   height: 100%;
   background-color: #000;
   opacity: 0.65;
-  transition: all 0.3s;
+  transition: all 0.2s;
   z-index: 2;
 }
 
@@ -1817,9 +1817,9 @@ th {
 }
 
 .bg-hover-primary-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-50:hover {
@@ -1827,9 +1827,9 @@ th {
 }
 
 .bg-hover-primary-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-100:hover {
@@ -1837,9 +1837,9 @@ th {
 }
 
 .bg-hover-primary-200 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-200:hover {
@@ -1847,9 +1847,9 @@ th {
 }
 
 .bg-hover-primary-300 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-300:hover {
@@ -1857,9 +1857,9 @@ th {
 }
 
 .bg-hover-primary-400 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-400:hover {
@@ -1867,9 +1867,9 @@ th {
 }
 
 .bg-hover-primary-500 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-500:hover {
@@ -1877,9 +1877,9 @@ th {
 }
 
 .bg-hover-primary-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-600:hover {
@@ -1887,9 +1887,9 @@ th {
 }
 
 .bg-hover-primary-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-700:hover {
@@ -1897,9 +1897,9 @@ th {
 }
 
 .bg-hover-primary-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-800:hover {
@@ -1907,9 +1907,9 @@ th {
 }
 
 .bg-hover-primary-900 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-primary-900:hover {
@@ -1917,9 +1917,9 @@ th {
 }
 
 .bg-hover-neutral-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-50:hover {
@@ -1927,9 +1927,9 @@ th {
 }
 
 .bg-hover-neutral-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-100:hover {
@@ -1937,9 +1937,9 @@ th {
 }
 
 .bg-hover-neutral-200 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-200:hover {
@@ -1947,9 +1947,9 @@ th {
 }
 
 .bg-hover-neutral-300 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-300:hover {
@@ -1957,9 +1957,9 @@ th {
 }
 
 .bg-hover-neutral-400 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-400:hover {
@@ -1967,9 +1967,9 @@ th {
 }
 
 .bg-hover-neutral-500 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-500:hover {
@@ -1977,9 +1977,9 @@ th {
 }
 
 .bg-hover-neutral-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-600:hover {
@@ -1987,9 +1987,9 @@ th {
 }
 
 .bg-hover-neutral-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-700:hover {
@@ -1997,9 +1997,9 @@ th {
 }
 
 .bg-hover-neutral-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-800:hover {
@@ -2007,9 +2007,9 @@ th {
 }
 
 .bg-hover-neutral-900 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-neutral-900:hover {
@@ -2017,9 +2017,9 @@ th {
 }
 
 .bg-hover-danger-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-50:hover {
@@ -2027,9 +2027,9 @@ th {
 }
 
 .bg-hover-danger-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-100:hover {
@@ -2037,9 +2037,9 @@ th {
 }
 
 .bg-hover-danger-200 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-200:hover {
@@ -2047,9 +2047,9 @@ th {
 }
 
 .bg-hover-danger-300 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-300:hover {
@@ -2057,9 +2057,9 @@ th {
 }
 
 .bg-hover-danger-400 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-400:hover {
@@ -2067,9 +2067,9 @@ th {
 }
 
 .bg-hover-danger-500 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-500:hover {
@@ -2077,9 +2077,9 @@ th {
 }
 
 .bg-hover-danger-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-600:hover {
@@ -2087,9 +2087,9 @@ th {
 }
 
 .bg-hover-danger-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-700:hover {
@@ -2097,9 +2097,9 @@ th {
 }
 
 .bg-hover-danger-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-800:hover {
@@ -2107,9 +2107,9 @@ th {
 }
 
 .bg-hover-danger-900 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-900:hover {
@@ -2117,9 +2117,9 @@ th {
 }
 
 .bg-hover-success-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-50:hover {
@@ -2127,9 +2127,9 @@ th {
 }
 
 .bg-hover-success-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-100:hover {
@@ -2137,9 +2137,9 @@ th {
 }
 
 .bg-hover-success-200 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-200:hover {
@@ -2147,9 +2147,9 @@ th {
 }
 
 .bg-hover-success-300 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-300:hover {
@@ -2157,9 +2157,9 @@ th {
 }
 
 .bg-hover-success-400 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-400:hover {
@@ -2167,9 +2167,9 @@ th {
 }
 
 .bg-hover-success-500 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-500:hover {
@@ -2177,9 +2177,9 @@ th {
 }
 
 .bg-hover-success-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-600:hover {
@@ -2187,9 +2187,9 @@ th {
 }
 
 .bg-hover-success-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-700:hover {
@@ -2197,9 +2197,9 @@ th {
 }
 
 .bg-hover-success-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-800:hover {
@@ -2207,9 +2207,9 @@ th {
 }
 
 .bg-hover-success-900 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-900:hover {
@@ -2217,9 +2217,9 @@ th {
 }
 
 .bg-hover-warning-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-50:hover {
@@ -2227,9 +2227,9 @@ th {
 }
 
 .bg-hover-warning-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-100:hover {
@@ -2237,9 +2237,9 @@ th {
 }
 
 .bg-hover-warning-200 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-200:hover {
@@ -2247,9 +2247,9 @@ th {
 }
 
 .bg-hover-warning-300 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-300:hover {
@@ -2257,9 +2257,9 @@ th {
 }
 
 .bg-hover-warning-400 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-400:hover {
@@ -2267,9 +2267,9 @@ th {
 }
 
 .bg-hover-warning-500 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-500:hover {
@@ -2277,9 +2277,9 @@ th {
 }
 
 .bg-hover-warning-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-600:hover {
@@ -2287,9 +2287,9 @@ th {
 }
 
 .bg-hover-warning-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-700:hover {
@@ -2297,9 +2297,9 @@ th {
 }
 
 .bg-hover-warning-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-800:hover {
@@ -2307,9 +2307,9 @@ th {
 }
 
 .bg-hover-warning-900 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-900:hover {
@@ -2317,9 +2317,9 @@ th {
 }
 
 .bg-hover-info-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-50:hover {
@@ -2327,9 +2327,9 @@ th {
 }
 
 .bg-hover-info-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-100:hover {
@@ -2337,9 +2337,9 @@ th {
 }
 
 .bg-hover-info-200 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-200:hover {
@@ -2347,9 +2347,9 @@ th {
 }
 
 .bg-hover-info-300 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-300:hover {
@@ -2357,9 +2357,9 @@ th {
 }
 
 .bg-hover-info-400 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-400:hover {
@@ -2367,9 +2367,9 @@ th {
 }
 
 .bg-hover-info-500 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-500:hover {
@@ -2377,9 +2377,9 @@ th {
 }
 
 .bg-hover-info-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-600:hover {
@@ -2387,9 +2387,9 @@ th {
 }
 
 .bg-hover-info-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-700:hover {
@@ -2397,9 +2397,9 @@ th {
 }
 
 .bg-hover-info-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-800:hover {
@@ -2407,9 +2407,9 @@ th {
 }
 
 .bg-hover-info-900 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-900:hover {
@@ -2417,9 +2417,9 @@ th {
 }
 
 .bg-hover-dark-1 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-dark-1:hover {
@@ -2427,9 +2427,9 @@ th {
 }
 
 .bg-hover-dark-2 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-dark-2:hover {
@@ -2437,9 +2437,9 @@ th {
 }
 
 .bg-hover-dark-3 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-dark-3:hover {
@@ -2447,9 +2447,9 @@ th {
 }
 
 .bg-hover-lilac-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-lilac-50:hover {
@@ -2457,9 +2457,9 @@ th {
 }
 
 .bg-hover-lilac-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-lilac-100:hover {
@@ -2467,9 +2467,9 @@ th {
 }
 
 .bg-hover-lilac-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-lilac-600:hover {
@@ -2477,9 +2477,9 @@ th {
 }
 
 .bg-hover-lilac-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-lilac-700:hover {
@@ -2487,9 +2487,9 @@ th {
 }
 
 .bg-hover-lilac-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-lilac-800:hover {
@@ -2497,9 +2497,9 @@ th {
 }
 
 .bg-hover-light-50 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-light-50:hover {
@@ -2507,9 +2507,9 @@ th {
 }
 
 .bg-hover-light-100 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-light-100:hover {
@@ -2517,9 +2517,9 @@ th {
 }
 
 .bg-hover-light-600 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-light-600:hover {
@@ -2527,9 +2527,9 @@ th {
 }
 
 .bg-hover-light-700 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-light-700:hover {
@@ -2537,9 +2537,9 @@ th {
 }
 
 .bg-hover-light-800 {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-light-800:hover {
@@ -2547,9 +2547,9 @@ th {
 }
 
 .bg-hover-success-main {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-main:hover {
@@ -2557,9 +2557,9 @@ th {
 }
 
 .bg-hover-success-surface {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-surface:hover {
@@ -2567,9 +2567,9 @@ th {
 }
 
 .bg-hover-success-border {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-border:hover {
@@ -2577,9 +2577,9 @@ th {
 }
 
 .bg-hover-success-hover {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-hover:hover {
@@ -2587,9 +2587,9 @@ th {
 }
 
 .bg-hover-success-pressed {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-pressed:hover {
@@ -2597,9 +2597,9 @@ th {
 }
 
 .bg-hover-success-focus {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-success-focus:hover {
@@ -2607,9 +2607,9 @@ th {
 }
 
 .bg-hover-info-main {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-main:hover {
@@ -2617,9 +2617,9 @@ th {
 }
 
 .bg-hover-info-surface {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-surface:hover {
@@ -2627,9 +2627,9 @@ th {
 }
 
 .bg-hover-info-border {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-border:hover {
@@ -2637,9 +2637,9 @@ th {
 }
 
 .bg-hover-info-hover {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-hover:hover {
@@ -2647,9 +2647,9 @@ th {
 }
 
 .bg-hover-info-pressed {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-pressed:hover {
@@ -2657,9 +2657,9 @@ th {
 }
 
 .bg-hover-info-focus {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-info-focus:hover {
@@ -2667,9 +2667,9 @@ th {
 }
 
 .bg-hover-warning-main {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-main:hover {
@@ -2677,9 +2677,9 @@ th {
 }
 
 .bg-hover-warning-surface {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-surface:hover {
@@ -2687,9 +2687,9 @@ th {
 }
 
 .bg-hover-warning-border {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-border:hover {
@@ -2697,9 +2697,9 @@ th {
 }
 
 .bg-hover-warning-hover {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-hover:hover {
@@ -2707,9 +2707,9 @@ th {
 }
 
 .bg-hover-warning-pressed {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-pressed:hover {
@@ -2717,9 +2717,9 @@ th {
 }
 
 .bg-hover-warning-focus {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-warning-focus:hover {
@@ -2727,9 +2727,9 @@ th {
 }
 
 .bg-hover-danger-main {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-main:hover {
@@ -2737,9 +2737,9 @@ th {
 }
 
 .bg-hover-danger-surface {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-surface:hover {
@@ -2747,9 +2747,9 @@ th {
 }
 
 .bg-hover-danger-border {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-border:hover {
@@ -2757,9 +2757,9 @@ th {
 }
 
 .bg-hover-danger-hover {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-hover:hover {
@@ -2767,9 +2767,9 @@ th {
 }
 
 .bg-hover-danger-pressed {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-pressed:hover {
@@ -2777,9 +2777,9 @@ th {
 }
 
 .bg-hover-danger-focus {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-danger-focus:hover {
@@ -2787,9 +2787,9 @@ th {
 }
 
 .bg-hover-cyan {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-cyan:hover {
@@ -2797,9 +2797,9 @@ th {
 }
 
 .bg-hover-indigo {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-indigo:hover {
@@ -2807,9 +2807,9 @@ th {
 }
 
 .bg-hover-purple {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-purple:hover {
@@ -2817,9 +2817,9 @@ th {
 }
 
 .bg-hover-red {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-red:hover {
@@ -2827,9 +2827,9 @@ th {
 }
 
 .bg-hover-yellow {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-yellow:hover {
@@ -2837,9 +2837,9 @@ th {
 }
 
 .bg-hover-orange {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-orange:hover {
@@ -2847,9 +2847,9 @@ th {
 }
 
 .bg-hover-pink {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .bg-hover-pink:hover {
@@ -6153,9 +6153,9 @@ h6, .h6 {
 }
 
 .br-hover-primary {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .br-hover-primary:hover {
@@ -6163,9 +6163,9 @@ h6, .h6 {
 }
 
 .br-hover-success {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .br-hover-success:hover {
@@ -6173,9 +6173,9 @@ h6, .h6 {
 }
 
 .br-hover-info {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .br-hover-info:hover {
@@ -6183,9 +6183,9 @@ h6, .h6 {
 }
 
 .br-hover-warning {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .br-hover-warning:hover {
@@ -6193,9 +6193,9 @@ h6, .h6 {
 }
 
 .br-hover-danger {
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .br-hover-danger:hover {
@@ -13524,7 +13524,7 @@ td.fc-header-center {
   width: 15.625rem;
   height: 100vh;
   background-color: var(--white);
-  transition: all 0.3s;
+  transition: all 0.2s;
   z-index: 3;
 }
 
@@ -13726,9 +13726,9 @@ td.fc-header-center {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   font-size: 1.125rem;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 @media (min-width: 1650px) {
@@ -13770,9 +13770,9 @@ td.fc-header-center {
   display: flex;
   align-items: center;
   color: var(--text-secondary-light);
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -13855,7 +13855,7 @@ td.fc-header-center {
   flex-wrap: wrap;
   flex-flow: column;
   min-height: 100vh;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 @media (min-width: 1200px) {
