@@ -40,7 +40,7 @@ const SignInLayer = () => {
             </div>
             <div className="auth-right py-32 px-24 d-flex flex-column justify-content-center">
                 <div className="max-w-464-px mx-auto w-100">
-                    <Link to="/" className="mb-40 max-w-590-px">
+                    <Link to="/" className="mb-40 text-center max-w-290-px flex place-self-center">
                         <img src="assets/images/logo.png" alt="Logo" />
                     </Link>
                     <h4 className="mb-12">Sign In to your Account</h4>
@@ -94,7 +94,7 @@ const SignInLayer = () => {
                         </div>
                         <button
                             type="submit"
-                            className="btn btn-primary text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32"
+                            className="btn btn-primary bg-red border-red text-sm btn-sm px-12 py-16 w-100 radius-12 mt-32"
                             disabled={loading}
                         >
                             {loading ? 'Signing in...' : 'Sign In'}

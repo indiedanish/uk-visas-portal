@@ -13,39 +13,44 @@ const MasterLayout = ({ children }) => {
     const handleDropdownClick = (event) => {
       event.preventDefault();
       const clickedLink = event.currentTarget;
-      const clickedDropdown = clickedLink.closest('.dropdown');
+      const clickedDropdown = clickedLink.closest(".dropdown");
 
       if (!clickedDropdown) return;
 
-      const isActive = clickedDropdown.classList.contains('open');
+      const isActive = clickedDropdown.classList.contains("open");
 
       // Close all dropdowns
-      const allDropdowns = document.querySelectorAll('.sidebar-menu .dropdown');
+      const allDropdowns = document.querySelectorAll(".sidebar-menu .dropdown");
       allDropdowns.forEach((dropdown) => {
-        dropdown.classList.remove('open');
+        dropdown.classList.remove("open");
       });
 
       // Toggle the clicked dropdown
       if (!isActive) {
-        clickedDropdown.classList.add('open');
+        clickedDropdown.classList.add("open");
       }
     };
 
     // Attach click event listeners to all dropdown triggers
-    const dropdownTriggers = document.querySelectorAll('.sidebar-menu .dropdown > a, .sidebar-menu .dropdown > Link');
+    const dropdownTriggers = document.querySelectorAll(
+      ".sidebar-menu .dropdown > a, .sidebar-menu .dropdown > Link"
+    );
 
     dropdownTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', handleDropdownClick);
+      trigger.addEventListener("click", handleDropdownClick);
     });
 
     // Function to open submenu based on current route
     const openActiveDropdown = () => {
-      const allDropdowns = document.querySelectorAll('.sidebar-menu .dropdown');
+      const allDropdowns = document.querySelectorAll(".sidebar-menu .dropdown");
       allDropdowns.forEach((dropdown) => {
-        const submenuLinks = dropdown.querySelectorAll('.sidebar-submenu li a');
+        const submenuLinks = dropdown.querySelectorAll(".sidebar-submenu li a");
         submenuLinks.forEach((link) => {
-          if (link.getAttribute('href') === location.pathname || link.getAttribute('to') === location.pathname) {
-            dropdown.classList.add('open');
+          if (
+            link.getAttribute("href") === location.pathname ||
+            link.getAttribute("to") === location.pathname
+          ) {
+            dropdown.classList.add("open");
           }
         });
       });
@@ -54,17 +59,13 @@ const MasterLayout = ({ children }) => {
     // Open the submenu that contains the open route
     openActiveDropdown();
 
-
-
     // Cleanup event listeners on unmount
     return () => {
       dropdownTriggers.forEach((trigger) => {
-        trigger.removeEventListener('click', handleDropdownClick);
+        trigger.removeEventListener("click", handleDropdownClick);
       });
-
     };
   }, [location.pathname]);
-
 
   let sidebarControl = () => {
     seSidebarActive(!sidebarActive);
@@ -74,13 +75,23 @@ const MasterLayout = ({ children }) => {
     setMobileMenu(!mobileMenu);
   };
 
-
-
   return (
     <section className={mobileMenu ? "overlay active" : "overlay "}>
       {/* sidebar */}
-      <aside className={sidebarActive ? "sidebar active " : mobileMenu ? "sidebar sidebar-open" : "sidebar"}>
-        <button onClick={mobileMenuControl} type="button" className="sidebar-close-btn">
+      <aside
+        className={
+          sidebarActive
+            ? "sidebar active "
+            : mobileMenu
+            ? "sidebar sidebar-open"
+            : "sidebar"
+        }
+      >
+        <button
+          onClick={mobileMenuControl}
+          type="button"
+          className="sidebar-close-btn"
+        >
           <Icon icon="radix-icons:cross-2" />
         </button>
         <div>
@@ -106,52 +117,71 @@ const MasterLayout = ({ children }) => {
           <ul className="sidebar-menu" id="sidebar-menu">
             <li className="dropdown">
               <Link to="#">
-                <Icon icon="solar:home-smile-angle-outline" className="menu-icon" />
+                <Icon
+                  icon="solar:home-smile-angle-outline"
+                  className="menu-icon"
+                />
                 <span>Dashboard</span>
               </Link>
               <ul className="sidebar-submenu">
                 <li>
-                  <NavLink to="/devices" className={(navData) =>
-                    navData.isActive ? "active-page" : ""
-                  }>
-                    <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />Devices
+                  <NavLink
+                    to="/devices"
+                    className={(navData) =>
+                      navData.isActive ? "active-page" : ""
+                    }
+                  >
+                    <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
+                    Devices
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/ads" className={(navData) =>
-                    navData.isActive ? "active-page" : ""
-                  }>
-                    <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />Advertisements
+                  <NavLink
+                    to="/ads"
+                    className={(navData) =>
+                      navData.isActive ? "active-page" : ""
+                    }
+                  >
+                    <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />
+                    Advertisements
                   </NavLink>
                 </li>
               </ul>
             </li>
-
           </ul>
         </div>
       </aside>
 
-      <main className={sidebarActive ? "dashboard-main active" : "dashboard-main"}>
+      <main
+        className={sidebarActive ? "dashboard-main active" : "dashboard-main"}
+      >
         <div className="navbar-header">
           <div className="row align-items-center justify-content-between">
             <div className="col-auto">
               <div className="d-flex flex-wrap align-items-center gap-4">
-                <button type="button" className="sidebar-toggle" onClick={sidebarControl}>
-                  {
-                    sidebarActive ? (<Icon
+                <button
+                  type="button"
+                  className="sidebar-toggle"
+                  onClick={sidebarControl}
+                >
+                  {sidebarActive ? (
+                    <Icon
                       icon="iconoir:arrow-right"
                       className="icon text-2xl non-active"
-                    />) : (<Icon
+                    />
+                  ) : (
+                    <Icon
                       icon="heroicons:bars-3-solid"
                       className="icon text-2xl non-active "
-                    />)
-                  }
+                    />
+                  )}
                 </button>
-                <button onClick={mobileMenuControl} type="button" className="sidebar-mobile-toggle">
-                  <Icon
-                    icon="heroicons:bars-3-solid"
-                    className="icon"
-                  />
+                <button
+                  onClick={mobileMenuControl}
+                  type="button"
+                  className="sidebar-mobile-toggle"
+                >
+                  <Icon icon="heroicons:bars-3-solid" className="icon" />
                 </button>
                 <form className="navbar-search">
                   <input type="text" name="search" placeholder="Search" />
@@ -171,7 +201,7 @@ const MasterLayout = ({ children }) => {
                   >
                     <img
                       src="assets/images/lang-flag.png"
-                      alt="Wowdash"
+                      alt="SpotBox Hub"
                       className="w-24 h-24 object-fit-cover rounded-circle"
                     />
                   </button>
@@ -725,10 +755,15 @@ const MasterLayout = ({ children }) => {
                         <h6 className="text-lg text-primary-light fw-semibold mb-2">
                           Shaidul Islam
                         </h6>
-                        <span className="text-secondary-light fw-medium text-sm">Admin</span>
+                        <span className="text-secondary-light fw-medium text-sm">
+                          Admin
+                        </span>
                       </div>
                       <button type="button" className="hover-text-danger">
-                        <Icon icon="radix-icons:cross-1" className="icon text-xl" />
+                        <Icon
+                          icon="radix-icons:cross-1"
+                          className="icon text-xl"
+                        />
                       </button>
                     </div>
                     <ul className="to-top-list">
@@ -737,8 +772,11 @@ const MasterLayout = ({ children }) => {
                           className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"
                           to="/view-profile"
                         >
-                          <Icon icon="solar:user-linear" className="icon text-xl" /> My
-                          Profile
+                          <Icon
+                            icon="solar:user-linear"
+                            className="icon text-xl"
+                          />{" "}
+                          My Profile
                         </Link>
                       </li>
                       <li>
@@ -746,7 +784,10 @@ const MasterLayout = ({ children }) => {
                           className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-primary d-flex align-items-center gap-3"
                           to="/email"
                         >
-                          <Icon icon="tabler:message-check" className="icon text-xl" />{" "}
+                          <Icon
+                            icon="tabler:message-check"
+                            className="icon text-xl"
+                          />{" "}
                           Inbox
                         </Link>
                       </li>
@@ -767,14 +808,14 @@ const MasterLayout = ({ children }) => {
                           className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
                           to="#"
                         >
-                          <Icon icon="lucide:power" className="icon text-xl" /> Log Out
+                          <Icon icon="lucide:power" className="icon text-xl" />{" "}
+                          Log Out
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
                 {/* Profile dropdown end */}
-
               </div>
             </div>
           </div>
@@ -787,11 +828,11 @@ const MasterLayout = ({ children }) => {
         <footer className="d-footer">
           <div className="row align-items-center justify-content-between">
             <div className="col-auto">
-              <p className="mb-0">© 2024 WowDash. All Rights Reserved.</p>
+              <p className="mb-0">© 2024 SpotBox Hub. All Rights Reserved.</p>
             </div>
             <div className="col-auto">
               <p className="mb-0">
-                Made by <span className="text-primary-600">wowtheme7</span>
+                Made by <span className="text-primary-600">SpotBox Hub</span>
               </p>
             </div>
           </div>
