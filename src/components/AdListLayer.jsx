@@ -60,6 +60,7 @@ const AdListLayer = () => {
         try {
           await addAd(formData);
           toast.success("Ad has been added successfully")
+          await fetchAds();
         } catch (error) {
             toast.error(error.message || "Please try again later, we are facing overload")
 
@@ -78,20 +79,20 @@ const AdListLayer = () => {
   const handleModalCancel = () => {
     setModalOpen(false);
   };
-
+  const fetchAds = async () => {
+    try {
+      setLoading(true);
+      const response = await getAds();
+      setAds(response.results || []);
+    } catch (error) {
+      console.error("Error fetching ads:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
   useEffect(() => {
     // Fetch ads when the component mounts
-    const fetchAds = async () => {
-      try {
-        setLoading(true);
-        const response = await getAds();
-        setAds(response.results || []);
-      } catch (error) {
-        console.error("Error fetching ads:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+ 
     fetchAds();
   }, []);
 
