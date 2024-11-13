@@ -173,6 +173,32 @@ const MasterLayout = ({ children }) => {
                 </li>
               </ul>
             </li>
+
+            <li className="dropdown">
+              <Link to="/dashboard">
+                <Icon
+                  icon="solar:home-smile-angle-outline"
+                  className="menu-icon"
+                />
+                <span>Advertisements</span>
+              </Link>
+
+              <ul className="sidebar-submenu">
+                <li>
+                  <NavLink
+                    to="/ads"
+                    className={(navData) =>
+                      navData.isActive ? "active-page" : ""
+                    }
+                  >
+                    <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
+                    List
+                  </NavLink>
+                </li>
+              </ul>
+            </li>
+
+
           </ul>
         </div>
       </aside>
