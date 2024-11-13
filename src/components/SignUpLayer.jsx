@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { signUpUser } from '../services/auth.service';
+import toast, { Toaster } from 'react-hot-toast';
 
 const SignUpLayer = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
@@ -24,10 +25,14 @@ const SignUpLayer = () => {
 
         try {
             const { user, tokens } = await signUpUser(formData.name, formData.email, formData.password);
-            login(user, tokens);  // Update auth context
-            navigate('/dashboard');  // Redirect on success
+            // login(user, tokens);  // Update auth context
+            toast.success('Registered successfully');
+            navigate('/sign-in');  // Redirect on success
         } catch (err) {
-            setError(err.message || 'Failed to sign up');
+            const error = err?.message || 'Failed to sign up'
+            setError(error);
+            toast.error(error);
+
         } finally {
             setLoading(false);
         }
@@ -35,6 +40,8 @@ const SignUpLayer = () => {
 
     return (
         <section className="auth bg-base d-flex flex-wrap">
+            <Toaster />
+
             <div className="auth-left d-lg-block d-none">
                 <div className="d-flex align-items-center flex-column h-100 justify-content-center">
                     <img src="assets/images/auth/auth-img.png" alt="Auth illustration" />
