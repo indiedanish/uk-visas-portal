@@ -43,6 +43,7 @@ const AdListLayer = () => {
       formData.append("title", data.title);
       formData.append("startTime", data.startTime);
       formData.append("endTime", data.endTime);
+      formData.append("status", data.status);
       formData.append(
         "displayFrequency",
         JSON.stringify(data.displayFrequency)
@@ -69,8 +70,11 @@ const AdListLayer = () => {
       } else if (modalActionType === "edit") {
         console.log("Updating ad:", data);
 
-        if(data?.imagesToRemove)
-          formData.append("imagesToRemove",  JSON.stringify(data.imagesToRemove));
+        if (data?.imagesToRemove)
+          formData.append(
+            "imagesToRemove",
+            JSON.stringify(data.imagesToRemove)
+          );
 
         try {
           await updateAd(formData, data.id);
@@ -227,25 +231,52 @@ const AdListLayer = () => {
                       </span>
                     </td>
                     <td>
-                      {ad.content.map((content, contentIndex) => (
-                        <div key={content._id} className="ad-content">
-                          <a
-                            href={content.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {content.type === "image" ? (
-                              <img
-                                src={content.url}
-                                alt="Ad Content"
-                                style={{ width: "50px", height: "50px" }}
-                              />
-                            ) : (
-                              <span>Other Content Type</span>
-                            )}
-                          </a>
+                      <div
+                        style={{
+                          maxWidth: "100px",
+                        }}
+                        className="max-w-[60px] overflow-x-auto d-flex justify-content-center"
+                      >
+                        <div
+                          style={{
+                            width: "max-content",
+                          }}
+                          className="d-flex max-w-max gap-1 place-self-center"
+                        >
+                          {ad.content.map((content, contentIndex) => (
+                            <div
+                              key={content._id}
+                              className="ad-content border-1 rounded-2"
+                            >
+                              <a
+                                href={content.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {content.type === "image" ? (
+                                  <img
+                                    src={content.url}
+                                    alt="Ad Content"
+                                    style={{
+                                      width: "50px",
+                                      height: "50px",
+                                      objectFit: "contain",
+                                    }}
+                                  />
+                                ) : (
+                                  <span>Other Content Type</span>
+                                )}
+                              </a>
+                            </div>
+                          ))}
+
+                          {!ad?.content.length ? (
+                            <div>
+                              <Icon style={{ fontSize: '40px' }} icon="mdi:panorama-variant-outline" />
+                            </div>
+                          ) : null}
                         </div>
-                      ))}
+                      </div>
                     </td>
                     <td>
                       <Link

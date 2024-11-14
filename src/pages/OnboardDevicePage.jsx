@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid"; // Import UUID generator
 import { QRCodeSVG } from "qrcode.react"; // Import QRCodeSVG
 import MasterLayout from "../masterLayout/MasterLayout";
 import Breadcrumb from "../components/Breadcrumb";
-import AdListLayer from "../components/AdListLayer";
-import apiConfig from "../configs/api.config";
+
 const OnboardDevice = () => {
   const [deviceUUID, setDeviceUUID] = useState(null);
   const navigate = useNavigate();
@@ -16,12 +15,17 @@ const OnboardDevice = () => {
     setDeviceUUID(generatedUUID); // Store it in the state
   }, []);
 
+  const handlePlayAds = () => {
+    navigate('/play-ads');
+  }
+
   return (
     <>
       <MasterLayout>
         <Breadcrumb title="Ad - List" />
         <div className="onboarding-container">
           <h2>Device Onboarding</h2>
+          <button onClick={handlePlayAds} className="btn btn-danger mb-5">Play Advertisements -> </button>
           {deviceUUID ? (
             <div>
               <p>Scan the QR code below to onboard this device:</p>

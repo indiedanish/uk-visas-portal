@@ -84,8 +84,6 @@ const DeviceModal = ({
   };
 
   const handleRemoveImage = (index) => {
-
-
     const imageToRemove = adData.images[index];
 
     setAdData((prevData) => ({
@@ -145,7 +143,7 @@ const DeviceModal = ({
   );
   const formatDate = (dateString) => {
     if (!dateString) return "";
-    return new Date(dateString).toISOString().split('T')[0];
+    return new Date(dateString).toISOString().split("T")[0];
   };
   const renderDateInput = (label, name, value) => (
     <div className="mb-20">
@@ -229,7 +227,10 @@ const DeviceModal = ({
                       </label>
                       <div className="d-flex align-items-center flex-wrap gap-2">
                         {daysOfWeek.map((day) => (
-                          <div key={day} className="form-check d-flex align-items-center gap-1">
+                          <div
+                            key={day}
+                            className="form-check d-flex align-items-center gap-1"
+                          >
                             <input
                               type="checkbox"
                               name="displayFrequency"
@@ -245,7 +246,6 @@ const DeviceModal = ({
                     </div>
 
                     <div className="d-flex flex-row gap-3">
-                      
                       {renderDateInput(
                         "Start Date",
                         "startTime",
@@ -280,7 +280,7 @@ const DeviceModal = ({
                       </label>
                       <div className="d-flex align-items-center flex-wrap gap-28">
                         {renderRadioInput("Active", "status", "active")}
-                        {renderRadioInput("Inactive", "status", "inactive")}
+                        {renderRadioInput("Pause", "status", "paused")}
                       </div>
                     </div>
                     <div className="col-12 mb-20">
@@ -307,13 +307,13 @@ const DeviceModal = ({
                               className="img-thumbnail"
                               width="100"
                             />
-                            <button
+                            <div
                               type="button"
-                              className="btn btn-danger btn-sm mt-2"
+                              className="p-0 rounded-2 btn-danger btn-sm text-center"
                               onClick={() => handleRemoveImage(index)}
                             >
-                              X
-                            </button>
+                              x
+                            </div>
                           </div>
                         ))}
                       </div>
