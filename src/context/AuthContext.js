@@ -12,6 +12,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
 
+
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
+    console.log("Logging Out")
     setUser(null);
     setToken(null);
     localStorage.removeItem("user");

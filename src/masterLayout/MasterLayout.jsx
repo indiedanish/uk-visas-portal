@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import ThemeToggleButton from "../helper/ThemeToggleButton";
+import {useAuth} from "../context/AuthContext"
 
 const MasterLayout = ({ children }) => {
   let [sidebarActive, seSidebarActive] = useState(false);
   let [mobileMenu, setMobileMenu] = useState(false);
   const location = useLocation(); // Hook to get the current route
+  const { logout } = useAuth();
 
   useEffect(() => {
     // Function to handle dropdown clicks
@@ -858,6 +860,7 @@ const MasterLayout = ({ children }) => {
                         <Link
                           className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
                           to="#"
+                          onClick={()=>logout()}
                         >
                           <Icon icon="lucide:power" className="icon text-xl" />{" "}
                           Log Out

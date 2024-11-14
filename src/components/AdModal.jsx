@@ -47,6 +47,7 @@ const DeviceModal = ({
 
     if (actionType === "edit" && initialData) {
       setAdData({
+        id: initialData.id,
         title: initialData.title || "",
         deviceId: initialData.deviceId || "",
         status: initialData.status || "active",
@@ -83,6 +84,15 @@ const DeviceModal = ({
   };
 
   const handleRemoveImage = (index) => {
+
+
+    const imageToRemove = adData.images[index];
+
+    setAdData((prevData) => ({
+      ...prevData,
+      imagesToRemove: [...(prevData.imagesToRemove || []), imageToRemove.url],
+    }));
+
     const updatedImages = adData.images.filter((_, i) => i !== index);
     setAdData((prevData) => ({
       ...prevData,

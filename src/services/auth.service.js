@@ -22,13 +22,13 @@ export const signInUser = async (email, password) => {
     }
 };
 
-export const signUpUser = async (name, email, password) => {
+export const signUpUser = async (name, email, password, role) => {
     const url = `${apiConfig.baseURL}/auth/register`;
     try {
         const response = await fetch(url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ name, email, password, role }),
         });
 
         if (!response.ok) {

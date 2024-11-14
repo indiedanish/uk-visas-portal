@@ -51,3 +51,30 @@ export const addAd = async (adData) => {
         throw error;
     }
 };
+
+
+export const updateAd = async (adData, adId) => {
+    const url = `${apiConfig.baseURL}/ads/${adId}`;
+
+    const accessToken = JSON.parse(localStorage.getItem('tokens')).access.token;
+    try {
+        const response = await fetch(url, {
+            method: 'PATCH',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken
+            },
+            body: adData // Corrected: Use JSON.stringify() to send the object as JSON
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error occurred while adding the ad.');
+        }
+
+        const data = await response.json();
+        return data;  // Return the response data, typically ad data or confirmation
+    } catch (error) {
+        console.error('Error during ad addition:', error);
+        throw error;
+    }
+};

@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAds, addAd } from "../services/ads.service";
+import { getAds, addAd, updateAd } from "../services/ads.service";
 import AdModal from "./AdModal";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
@@ -36,37 +36,50 @@ const AdListLayer = () => {
 
   const handleModalSubmit = async (data) => {
     try {
+      // Add other required fields from adsInfo
+      const formData = new FormData();
+      formData.append("deviceId", data.deviceId);
+      formData.append("title", data.title);
+      formData.append("startTime", data.startTime);
+      formData.append("endTime", data.endTime);
+      formData.append(
+        "displayFrequency",
+        JSON.stringify(data.displayFrequency)
+      );
+
+      // Append images as "files" array for backend processing
+      data.images.forEach((image) => {
+        console.log("DD", image);
+        formData.append("files", image);
+      });
+
       if (modalActionType === "add") {
         console.log(data);
 
-        const formData = new FormData();
-
-        // Append images as "files" array for backend processing
-        data.images.forEach((image) => {
-          console.log("DD", image);
-          formData.append("files", image); // Ensures "files" matches backend field
-        });
-
-        // Add other required fields from adsInfo
-        formData.append("deviceId", data.deviceId);
-        formData.append("title", data.title);
-        formData.append("startTime", data.startTime);
-        formData.append("endTime", data.endTime);
-        formData.append(
-          "displayFrequency",
-          JSON.stringify(data.displayFrequency)
-        );
-
         try {
           await addAd(formData);
-          toast.success("Ad has been added successfully")
+          toast.success("Ad has been added successfully");
           await fetchAds();
         } catch (error) {
-            toast.error(error.message || "Please try again later, we are facing overload")
-
+          toast.error(
+            error.message || "Please try again later, we are facing overload"
+          );
         }
       } else if (modalActionType === "edit") {
         console.log("Updating ad:", data);
+
+        if(data?.imagesToRemove)
+          formData.append("imagesToRemove",  JSON.stringify(data.imagesToRemove));
+
+        try {
+          await updateAd(formData, data.id);
+          toast.success("Ad has been updated successfully");
+          await fetchAds();
+        } catch (error) {
+          toast.error(
+            error.message || "Please try again later, we are facing overload"
+          );
+        }
       } else if (modalActionType === "delete") {
         console.log("Deleting ad:", selectedAd);
       }
@@ -92,7 +105,7 @@ const AdListLayer = () => {
   };
   useEffect(() => {
     // Fetch ads when the component mounts
- 
+
     fetchAds();
   }, []);
 
