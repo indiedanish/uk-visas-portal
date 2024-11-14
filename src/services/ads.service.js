@@ -49,7 +49,7 @@ export const addAd = async (adData) => {
     } catch (error) {
         console.error('Error during ad addition:', error);
         throw error;
-    }
+}
 };
 
 

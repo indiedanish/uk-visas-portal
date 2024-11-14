@@ -5,6 +5,7 @@ import { getAds, addAd, updateAd } from "../services/ads.service";
 import AdModal from "./AdModal";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
+import { formatTimeTo12Hour } from "../utils/date.util";
 
 const AdListLayer = () => {
   const [ads, setAds] = useState([]);
@@ -212,8 +213,8 @@ const AdListLayer = () => {
                       </Link>
                     </td>
                     <td>{ad.title}</td>
-                    <td>{new Date(ad.startTime).toLocaleDateString()}</td>
-                    <td>{new Date(ad.endTime).toLocaleDateString()}</td>
+                    <td>{formatTimeTo12Hour(ad.startTime)}</td>
+                    <td>{formatTimeTo12Hour(ad.endTime)}</td>
                     <td>
                       <span
                         className={`px-24 py-4 rounded-pill fw-medium text-sm ${
