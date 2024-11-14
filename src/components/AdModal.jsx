@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { getDevices } from "../services/devices.service";
+import toast from "react-hot-toast";
 
 const DeviceModal = ({
   isOpen,
@@ -75,7 +76,17 @@ const DeviceModal = ({
   };
 
   const handleImageChange = (e) => {
+
     const files = Array.from(e.target.files);
+    const validTypes = ["image/jpeg", "image/jpg", "image/png"];
+    const invalidFiles = files.filter((file) => !validTypes.includes(file.type));
+  
+    // If there are any invalid files, show an alert or error message
+    if (invalidFiles.length > 0) {
+      toast.error("Only jpeg, jpg, and png file types are allowed.");
+      return; // Prevent adding invalid files
+    }
+
     setAdData((prevData) => ({
       ...prevData,
       images: [...prevData.images, ...files],
@@ -100,6 +111,12 @@ const DeviceModal = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (adData.startTime && adData.endTime && adData.endTime < adData.startTime) {
+      toast.error("End time cannot be earlier than start time")
+      return; // Prevent form submission
+    }
+
     onSubmit(adData);
   };
 
@@ -285,7 +302,7 @@ const DeviceModal = ({
                     </div>
                     <div className="col-12 mb-20">
                       <label className="form-label fw-semibold text-primary-light text-sm mb-8">
-                        Upload Images
+                        Upload Images <span className="font-light">**JPEG, JPG, & PNG**</span>
                       </label>
                       <input
                         type="file"
@@ -327,12 +344,12 @@ const DeviceModal = ({
                 <div className="d-flex align-items-center justify-content-center gap-3 mt-24">
                   <button
                     type="button"
-                    className="btn btn-danger radius-8"
+                    className="btn radius-8 outline border-2 border-orange"
                     onClick={onCancel}
                   >
                     Cancel
                   </button>
-                  <button type="submit" className="btn btn-primary radius-8">
+                  <button type="submit" className="btn btn-danger radius-8">
                     {actionType === "add"
                       ? "Add Device"
                       : actionType === "edit"
