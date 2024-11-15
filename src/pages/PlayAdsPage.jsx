@@ -4,7 +4,7 @@ import { saveUsersAdRunTime } from "../services/users.service";
 import toast, { Toaster } from "react-hot-toast";
 
 const PlayAdsPage = () => {
-  const [ads, setAds] = useState([]);
+  const [ads, setAds] = useState(null);
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
   const [adRunDuration, setAdRunDuration] = useState(0); // Track running time in seconds
   const [isTabVisible, setIsTabVisible] = useState(true);
@@ -51,7 +51,7 @@ const PlayAdsPage = () => {
   }, []);
 
   useEffect(() => {
-    if (ads.length === 0) return;
+    if (ads?.length === 0) return;
 
     const slideShowInterval = setInterval(() => {
       setResetProgress(true); // Set to reset progress bar
@@ -101,14 +101,14 @@ const PlayAdsPage = () => {
     return () => clearInterval(adsStatusCheckInterval);
   }, []);
 
-  if (!ads.length) {
+  if (!ads?.length) {
     return (
       <div className="d-flex flex-column w-100 h-100vh align-items-center justify-content-center">
         <img
           className="w-200-px"
           src="/assets/images/preloader/Loader-2.svg"
           ></img>
-          <span>{ads.length==0? "Ads not Available" : "Loading"}</span>
+          <span>{ads?.length===0? "Ads not Available" : "Loading"}</span>
       </div>
     );
   }
