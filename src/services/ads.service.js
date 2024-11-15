@@ -19,6 +19,7 @@ export const getAds = async () => {
         }
 
         const data = await response.json();
+        console.log("response.json()", data)
         return data;  // Assume API returns user data under 'user' key
     } catch (error) {
         console.error('Error during login:', error);
@@ -49,7 +50,7 @@ export const addAd = async (adData) => {
     } catch (error) {
         console.error('Error during ad addition:', error);
         throw error;
-}
+    }
 };
 
 
@@ -97,10 +98,11 @@ export const deleteAd = async (adId) => {
             throw new Error(errorData.message || 'Error occurred while adding the ad.');
         }
 
-        
+
         return;
     } catch (error) {
         console.error('Error during ad addition:', error);
         throw error;
     }
 };
+

@@ -1,41 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getAds } from "../services/ads.service";
-import useSocket from "../hook/useSocket";
+import { saveUsersAdRunTime } from "../services/users.service";
 
 const PlayAdsPage = () => {
   const [ads, setAds] = useState([]);
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
-  const socket = useSocket();
+  const [adRunDuration, setAdRunDuration] = useState(0); // Track running time in seconds
+  const [isTabVisible, setIsTabVisible] = useState(true);
 
-  useEffect(() => {
-    console.log("socket", socket);
+  const SECONDS_TO_SAVE = 300;
 
-    if (socket) {
-      // Listen for events once the socket is available
-      socket.on("connect", () => {
-        console.log("Connected to server");
-      });
-
-      socket.on("adUpdated", (data) => {
-        console.log("Ad updated:", data);
-        fetchAds();
-      });
-
-      // Optionally handle other events like disconnects or errors
-      socket.on("disconnect", () => {
-        console.log("Disconnected from server");
-      });
-
-      // Cleanup listeners when the component unmounts
-      return () => {
-        socket.off("adUpdated"); // Remove event listener
-        socket.off("connect"); // Remove connect listener
-        socket.off("disconnect"); // Remove disconnect listener
-      };
-    }
-  }, [socket]); // Only run this effect when the socket is available
-
-  // Function to check if current time is within the ad's start and end time
   const isAdActive = (startTime, endTime, currentDay, displayFrequency) => {
     const now = new Date();
     const currentTime = `${now.getHours()}:${now.getMinutes()}`;
@@ -71,7 +45,6 @@ const PlayAdsPage = () => {
         .flat(); // Flatten the array of arrays into a single array of URLs
 
       setAds(adUrls); // Set the ads URLs in state
-      console.log(adUrls); // Debugging the URLs
     } catch (error) {
       console.error("Error fetching ads:", error);
     }
@@ -82,20 +55,54 @@ const PlayAdsPage = () => {
     fetchAds();
   }, []); // Empty dependency array ensures this effect only runs once when the component mounts
 
-  // Setup slideshow only if ads are loaded
   useEffect(() => {
     if (ads.length === 0) return; // Don't set up interval if ads are empty
 
-    const interval = setInterval(() => {
+    // Interval for ad slideshow
+    const slideShowInterval = setInterval(() => {
       setCurrentAdIndex((prevIndex) => (prevIndex + 1) % ads.length);
     }, 5000); // Change ad every 5 seconds
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
-  }, [ads]); // Only run this effect when 'ads' is updated
+    // Interval for tracking ad running time (every second)
+    const adRunTimeInterval = setInterval(() => {
+      setAdRunDuration((prevTime) => {
+        if (isTabVisible && prevTime >= SECONDS_TO_SAVE) {
+          saveUsersAdRunTime({
+            adRunDuration: prevTime,
+            adsUrls: ads,
+          });
+
+          return 1; // Reset after 100 seconds
+        } else {
+          return prevTime + 1; // Increment ad running time by 1 second
+        }
+      });
+    }, 1000); // Track running time every second
+
+    const handleVisibilityChange = () => {
+      // When tab is changes, reset the ad running time to 0
+      setAdRunDuration(0);
+      setCurrentAdIndex(0);
+
+      if (document.visibilityState == "hidden") {
+        setIsTabVisible(false);
+      } else if (document.visibilityState == "visible") {
+        setIsTabVisible(true);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    // Cleanup intervals and event listeners when component unmounts or ads change
+    return () => {
+      clearInterval(slideShowInterval);
+      clearInterval(adRunTimeInterval);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, [ads]); // Run effect again if ads change
 
   if (!ads.length) {
-    return <div>Loading ads...</div>;
+    return <div>Loading ads... {JSON.stringify(ads)}</div>;
   }
 
   return (

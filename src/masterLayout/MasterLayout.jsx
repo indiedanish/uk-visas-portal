@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import ThemeToggleButton from "../helper/ThemeToggleButton";
-import {useAuth} from "../context/AuthContext"
+import { useAuth } from "../context/AuthContext";
 
 const MasterLayout = ({ children }) => {
   let [sidebarActive, seSidebarActive] = useState(false);
@@ -141,7 +141,7 @@ const MasterLayout = ({ children }) => {
               </ul>
             </li>
 
-            <li className="dropdown">
+            {/* <li className="dropdown">
               <Link to="/devices">
                 <Icon
                   icon="solar:home-smile-angle-outline"
@@ -174,7 +174,7 @@ const MasterLayout = ({ children }) => {
                   </NavLink>
                 </li>
               </ul>
-            </li>
+            </li> */}
 
             <li className="dropdown">
               <Link to="/dashboard">
@@ -188,19 +188,31 @@ const MasterLayout = ({ children }) => {
               <ul className="sidebar-submenu">
                 <li>
                   <NavLink
-                    to="/ads"
+                    to="/play-ads"
                     className={(navData) =>
                       navData.isActive ? "active-page" : ""
                     }
                   >
                     <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
-                    List
+                    Player
+                  </NavLink>
+                </li>
+              </ul>
+
+              <ul className="sidebar-submenu">
+                <li>
+                  <NavLink
+                    to="/ads"
+                    className={(navData) =>
+                      navData.isActive ? "active-page" : ""
+                    }
+                  >
+                    <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />
+                    Manage
                   </NavLink>
                 </li>
               </ul>
             </li>
-
-
           </ul>
         </div>
       </aside>
@@ -860,7 +872,7 @@ const MasterLayout = ({ children }) => {
                         <Link
                           className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
                           to="#"
-                          onClick={()=>logout()}
+                          onClick={() => logout()}
                         >
                           <Icon icon="lucide:power" className="icon text-xl" />{" "}
                           Log Out
