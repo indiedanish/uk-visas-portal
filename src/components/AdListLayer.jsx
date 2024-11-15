@@ -240,7 +240,7 @@ const AdListLayer = () => {
                         style={{
                           maxWidth: "100px",
                         }}
-                        className="max-w-[60px] overflow-x-auto d-flex justify-content-center"
+                        className="max-w-[60px] overflow-x-auto d-flex"
                       >
                         <div
                           style={{
@@ -251,7 +251,7 @@ const AdListLayer = () => {
                           {ad.content.map((content, contentIndex) => (
                             <div
                               key={content._id}
-                              className="ad-content border-1 rounded-2"
+                              className="ad-content border-1 rounded-2 w-80-px"
                             >
                               <a
                                 href={content.url}
@@ -263,7 +263,7 @@ const AdListLayer = () => {
                                     src={content.url}
                                     alt="Ad Content"
                                     style={{
-                                      width: "50px",
+                                      width: "100px",
                                       height: "50px",
                                       objectFit: "contain",
                                     }}
