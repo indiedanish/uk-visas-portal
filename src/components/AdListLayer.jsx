@@ -13,6 +13,8 @@ const AdListLayer = () => {
   const [modalActionType, setModalActionType] = useState("add");
   const [selectedAd, setSelectedAd] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loadingModal, setLoadingModal] = useState(false);
+
 
   const handleAddClick = () => {
     setModalActionType("add");
@@ -36,8 +38,8 @@ const AdListLayer = () => {
   };
 
   const handleModalSubmit = async (data) => {
-    try {
-      // Add other required fields from adsInfo
+    setLoadingModal(true)
+    const createFormData = (data) => {
       const formData = new FormData();
       formData.append("deviceId", data.deviceId);
       formData.append("title", data.title);
@@ -49,55 +51,51 @@ const AdListLayer = () => {
         JSON.stringify(data.displayFrequency)
       );
 
-      // Append images as "files" array for backend processing
-      data.images.forEach((image) => {
-        console.log("DD", image);
-        formData.append("files", image);
-      });
+      data.images.forEach((image) => formData.append("files", image));
 
-      if (modalActionType === "add") {
-        console.log(data);
-
-        try {
-          await addAd(formData);
-          toast.success("Ad has been added successfully");
-          await fetchAds();
-        } catch (error) {
-          toast.error(
-            error.message || "Please try again later, we are facing overload"
-          );
-        }
-      } else if (modalActionType === "edit") {
-        console.log("Updating ad:", data);
-
-        if (data?.imagesToRemove)
-          formData.append(
-            "imagesToRemove",
-            JSON.stringify(data.imagesToRemove)
-          );
-
-        try {
-          await updateAd(formData, data.id);
-          toast.success("Ad has been updated successfully");
-          await fetchAds();
-        } catch (error) {
-          toast.error(
-            error.message || "Please try again later, we are facing overload"
-          );
-        }
-      } else if (modalActionType === "delete") {
-        console.log("Deleting ad:", selectedAd);
-
-        await deleteAd(selectedAd.id);
-        toast.success("Ad has been deleted successfully");
-        await fetchAds();
+      if (data?.imagesToRemove) {
+        formData.append("imagesToRemove", JSON.stringify(data.imagesToRemove));
       }
+
+      return formData;
+    };
+
+    const showToastMessage = (type, message) => {
+      type === "success" ? toast.success(message) : toast.error(message);
+    };
+
+    try {
+      const formData = createFormData(data);
+
+      switch (modalActionType) {
+        case "add":
+          await addAd(formData);
+          showToastMessage("success", "Ad has been added successfully");
+          break;
+
+        case "edit":
+          await updateAd(formData, data.id);
+          showToastMessage("success", "Ad has been updated successfully");
+          break;
+
+        case "delete":
+          await deleteAd(selectedAd.id);
+          showToastMessage("success", "Ad has been deleted successfully");
+          break;
+
+        default:
+          throw new Error("Invalid action type");
+      }
+
+      await fetchAds();
       setModalOpen(false);
     } catch (error) {
-      toast.error(
-        error.message ||
-          "Failed to perform action, try later. We are facing heavy traffic issue"
+      showToastMessage(
+        "error",
+        error.message || "An error occurred, please try again later."
       );
+    } finally {
+      setLoadingModal(false)
     }
   };
 
@@ -351,6 +349,7 @@ const AdListLayer = () => {
               initialData={selectedAd}
               onSubmit={handleModalSubmit}
               onCancel={handleModalCancel}
+              loadingModal={loadingModal}
             />
           )}
         </>

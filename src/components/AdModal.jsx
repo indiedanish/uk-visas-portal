@@ -9,6 +9,7 @@ const DeviceModal = ({
   initialData = {},
   onSubmit,
   onCancel,
+  loadingModal = false,
 }) => {
   const [adData, setAdData] = useState({
     title: "",
@@ -76,11 +77,12 @@ const DeviceModal = ({
   };
 
   const handleImageChange = (e) => {
-
     const files = Array.from(e.target.files);
     const validTypes = ["image/jpeg", "image/jpg", "image/png"];
-    const invalidFiles = files.filter((file) => !validTypes.includes(file.type));
-  
+    const invalidFiles = files.filter(
+      (file) => !validTypes.includes(file.type)
+    );
+
     // If there are any invalid files, show an alert or error message
     if (invalidFiles.length > 0) {
       toast.error("Only jpeg, jpg, and png file types are allowed.");
@@ -112,8 +114,12 @@ const DeviceModal = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (adData.startTime && adData.endTime && adData.endTime < adData.startTime) {
-      toast.error("End time cannot be earlier than start time")
+    if (
+      adData.startTime &&
+      adData.endTime &&
+      adData.endTime < adData.startTime
+    ) {
+      toast.error("End time cannot be earlier than start time");
       return; // Prevent form submission
     }
 
@@ -173,6 +179,7 @@ const DeviceModal = ({
         className="form-control radius-8"
         value={value}
         onChange={handleChange}
+        required
       />
     </div>
   );
@@ -202,6 +209,7 @@ const DeviceModal = ({
         value={value}
         checked={adData.status === value}
         onChange={handleChange}
+        required
       />
       <label className="form-check-label">{label}</label>
     </div>
@@ -278,6 +286,7 @@ const DeviceModal = ({
                         onChange={handleDeviceChange}
                         id="device-select"
                         className="form-control"
+                        required
                       >
                         <option value="" disabled>
                           Select a device
@@ -302,7 +311,8 @@ const DeviceModal = ({
                     </div>
                     <div className="col-12 mb-20">
                       <label className="form-label fw-semibold text-primary-light text-sm mb-8">
-                        Upload Images <span className="font-light">**JPEG, JPG, & PNG**</span>
+                        Upload Images{" "}
+                        <span className="font-light">**JPEG, JPG, & PNG**</span>
                       </label>
                       <input
                         type="file"
@@ -349,12 +359,23 @@ const DeviceModal = ({
                   >
                     Cancel
                   </button>
-                  <button type="submit" className="btn btn-danger radius-8">
+                  <button
+                    disabled={loadingModal}
+                    type="submit"
+                    className="btn btn-danger radius-8 d-flex align-items-center gap-1"
+                  >
                     {actionType === "add"
                       ? "Add Device"
                       : actionType === "edit"
                       ? "Save Changes"
                       : "Delete"}
+
+                    {loadingModal ? (
+                      <img
+                        className="w-20-px ml-2"
+                        src="/assets/images/preloader/Spinner-2.svg"
+                      ></img>
+                    ) : null}
                   </button>
                 </div>
               </div>
