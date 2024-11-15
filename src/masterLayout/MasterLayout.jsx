@@ -8,7 +8,7 @@ const MasterLayout = ({ children }) => {
   let [sidebarActive, seSidebarActive] = useState(false);
   let [mobileMenu, setMobileMenu] = useState(false);
   const location = useLocation(); // Hook to get the current route
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   useEffect(() => {
     // Function to handle dropdown clicks
@@ -185,19 +185,36 @@ const MasterLayout = ({ children }) => {
                 <span>Advertisements</span>
               </Link>
 
-              <ul className="sidebar-submenu">
-                <li>
-                  <NavLink
-                    to="/play-ads"
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
-                  >
-                    <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
-                    Player
-                  </NavLink>
-                </li>
-              </ul>
+              {user.role == "screenOwner" ? (
+                <>
+                  <ul className="sidebar-submenu">
+                    <li>
+                      <NavLink
+                        to="/play-ads"
+                        className={(navData) =>
+                          navData.isActive ? "active-page" : ""
+                        }
+                      >
+                        <i className="ri-circle-fill circle-icon text-info-600 w-auto" />
+                        Play Your Content
+                      </NavLink>
+                    </li>
+                  </ul>
+                  <ul className="sidebar-submenu">
+                    <li>
+                      <NavLink
+                        to="/play-commerical-ads"
+                        className={(navData) =>
+                          navData.isActive ? "active-page" : ""
+                        }
+                      >
+                        <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
+                        Play Commerical Ads
+                      </NavLink>
+                    </li>
+                  </ul>
+                </>
+              ) : null}
 
               <ul className="sidebar-submenu">
                 <li>
@@ -808,20 +825,19 @@ const MasterLayout = ({ children }) => {
                     type="button"
                     data-bs-toggle="dropdown"
                   >
-                    <img
-                      src="assets/images/user.png"
-                      alt="image_user"
-                      className="w-40-px h-40-px object-fit-cover rounded-circle"
-                    />
+                    <Icon
+                      icon="mdi:user"
+                      className="icon bg-danger-100 p-4 w-40-px h-40-px object-fit-cover rounded-circle"
+                    ></Icon>
                   </button>
                   <div className="dropdown-menu to-top dropdown-menu-sm">
                     <div className="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
                       <div>
-                        <h6 className="text-lg text-primary-light fw-semibold mb-2">
-                          Shaidul Islam
+                        <h6 className="text-lg text-primary-light fw-semibold mb-2 text-capitalize">
+                          {user.name}
                         </h6>
-                        <span className="text-secondary-light fw-medium text-sm">
-                          Admin
+                        <span className="text-capitalize text-secondary-light fw-medium text-sm">
+                          {user.role}
                         </span>
                       </div>
                       <button type="button" className="hover-text-danger">

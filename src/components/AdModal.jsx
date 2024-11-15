@@ -279,7 +279,7 @@ const DeviceModal = ({
                       {renderDateInput("End Date", "endTime", adData.endTime)}
                     </div>
 
-                    <div className="form-check align-items-center gap-2">
+                    {/* <div className="form-check align-items-center gap-2">
                       <label htmlFor="device-select">Choose a device:</label>
                       <select
                         value={adData.deviceId}
@@ -298,7 +298,7 @@ const DeviceModal = ({
                             </option>
                           ))}
                       </select>
-                    </div>
+                    </div> */}
 
                     <div className="col-12 mb-20">
                       <label className="form-label fw-semibold text-primary-light text-sm mb-8">
