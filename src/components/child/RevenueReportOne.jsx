@@ -77,7 +77,7 @@ const RevenueReportOne = () => {
                       <span className="mb-1 fw-medium text-secondary-light text-md">
                         Total Screen Time
                       </span>
-                      <h6 className="fw-semibold text-primary-light mb-1">{totalDisplayDuration} seconds</h6>
+                      <h6 className="fw-semibold text-primary-light mb-1">{ `${Math.floor(totalDisplayDuration / 60)}:${totalDisplayDuration % 60}`} minutes</h6>
                     </div>
                   </div>
                   <p className="text-sm mb-0">
