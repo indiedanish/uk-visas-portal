@@ -47,10 +47,6 @@ const PlayAdsPage = () => {
 
   useEffect(() => {
     fetchAds();
-    const adsStatusCheckInterval = setInterval(() => {
-      fetchAds(); // Re-fetch ads to ensure they are still active
-    }, 60000);
-    return () => clearInterval(adsStatusCheckInterval);
   }, []);
 
   useEffect(() => {
@@ -98,7 +94,7 @@ const PlayAdsPage = () => {
 
   if (!ads.length) {
     return (
-      <div className="d-flex flex-column w-100 h-100vh align-items-center justify-content-center">
+        <div className="d-flex flex-column w-100 h-100vh align-items-center justify-content-center">
         <img
           className="w-200-px"
           src="/assets/images/preloader/Loader-2.svg"

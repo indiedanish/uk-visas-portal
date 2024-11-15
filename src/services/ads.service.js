@@ -19,7 +19,6 @@ export const getAds = async () => {
         }
 
         const data = await response.json();
-        console.log("response.json()", data)
         return data;  // Assume API returns user data under 'user' key
     } catch (error) {
         console.error('Error during login:', error);
