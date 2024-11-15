@@ -93,6 +93,14 @@ const PlayAdsPage = () => {
     }
   }, [resetProgress]);
 
+    useEffect(() => {
+    fetchAds();
+    const adsStatusCheckInterval = setInterval(() => {
+      fetchAds(); // Re-fetch ads to ensure they are still active
+    }, 60000);
+    return () => clearInterval(adsStatusCheckInterval);
+  }, []);
+
   if (!ads.length) {
     return (
       <div className="d-flex flex-column w-100 h-100vh align-items-center justify-content-center">
