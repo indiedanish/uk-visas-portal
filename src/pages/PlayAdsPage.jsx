@@ -93,11 +93,18 @@ const PlayAdsPage = () => {
   }, [resetProgress]);
 
   if (!ads.length) {
-    return <div>Loading ads...</div>;
+    return (
+      <div className="d-flex w-100 h-100vh align-items-center justify-content-center">
+        <img
+          className="w-200-px ml-2 "
+          src="/assets/images/preloader/Loader-2.svg"
+        ></img>
+      </div>
+    );
   }
 
   return (
-    <div className="d-flex h-100vw align-items-center">
+    <div className="d-flex h-100vh align-items-center">
       {/* Ad Slideshow */}
       <div className="ad-slideshow h-max-content">
         <img
