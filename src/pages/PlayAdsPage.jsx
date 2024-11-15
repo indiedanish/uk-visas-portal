@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAds } from "../services/ads.service";
 import { saveUsersAdRunTime } from "../services/users.service";
+import toast, { Toaster } from "react-hot-toast";
 
 const PlayAdsPage = () => {
   const [ads, setAds] = useState([]);
@@ -47,10 +48,6 @@ const PlayAdsPage = () => {
 
   useEffect(() => {
     fetchAds();
-    const adsStatusCheckInterval = setInterval(() => {
-      fetchAds(); // Re-fetch ads to ensure they are still active
-    }, 60000);
-    return () => clearInterval(adsStatusCheckInterval);
   }, []);
 
   useEffect(() => {
@@ -59,13 +56,13 @@ const PlayAdsPage = () => {
     const slideShowInterval = setInterval(() => {
       setResetProgress(true); // Set to reset progress bar
       setCurrentAdIndex((prevIndex) => (prevIndex + 1) % ads.length);
-      setAdRunDuration(0); // Reset progress bar for the new ad
     }, AD_DISPLAY_TIME * 1000);
 
     const adRunTimeInterval = setInterval(() => {
       setAdRunDuration((prevTime) => {
         if (isTabVisible && prevTime >= SECONDS_TO_SAVE) {
           saveUsersAdRunTime({ adRunDuration: prevTime, adsUrls: ads });
+          toast.success("Updated")
           return 1;
         } else {
           return prevTime + 1;
@@ -103,13 +100,14 @@ const PlayAdsPage = () => {
           className="w-200-px"
           src="/assets/images/preloader/Loader-2.svg"
           ></img>
-          <span>{ads.length==0? "Ads not available" : "Loading"}</span>
+          <span>{ads.length==0? "Ads not Available" : "Loading"}</span>
       </div>
     );
   }
 
   return (
     <div className="d-flex h-100vh align-items-center">
+      <Toaster/>
       {/* Ad Slideshow */}
       <div className="ad-slideshow h-max-content">
         <img
@@ -134,9 +132,7 @@ const PlayAdsPage = () => {
         <div
           style={{
             height: "100%",
-            width: resetProgress
-              ? 0
-              : `${(adRunDuration / AD_DISPLAY_TIME) * 100}%`, // Reset progress on new ad
+            width:  `${(adRunDuration / SECONDS_TO_SAVE) * 100}%`, // Reset progress on new ad
             backgroundColor: "#420000FF",
             transition: resetProgress ? "none" : "width 1s linear", // Remove transition during reset
           }}

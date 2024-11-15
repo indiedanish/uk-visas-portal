@@ -85,8 +85,8 @@ const VideoGeneratorLayer = () => {
                 <option value="Select Voice" disabled>
                   Select Voice
                 </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="Commercial Ads">Commercial Ads</option>
+                <option value="Your Content">Your Content</option>
               </select>
             </div>
             <div className="mb-20">

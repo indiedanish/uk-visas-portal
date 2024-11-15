@@ -1909,7 +1909,7 @@ const useReactApexChart = () => {
     let statisticsDonutChartOptions = {
 
         colors: ['#FF9F29', '#487FFF'],
-        labels: ['Female', 'Male'],
+        labels: ['Your Content', 'Commercial Ads'],
         legend: {
             show: false
         },
@@ -2231,7 +2231,7 @@ const useReactApexChart = () => {
     var statisticsDonutChartOptionsThree = {
 
         colors: ['#FF9F29', '#487FFF'],
-        labels: ['Female', 'Male'],
+        labels: ['Your Content', 'Commercial Ads'],
         legend: {
             show: false
         },

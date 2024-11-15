@@ -37,15 +37,15 @@ const CustomersStatisticsOne = () => {
                         <li className="d-flex align-items-center gap-2">
                             <span className="w-12-px h-12-px radius-2 bg-primary-600" />
                             <span className="text-secondary-light text-sm fw-normal">
-                                Male:
-                                <span className="text-primary-light fw-bold">20,000</span>
+                                Commercial Ads:
+                                <span className="text-primary-light fw-bold"> 25.5 Hours </span>
                             </span>
                         </li>
                         <li className="d-flex align-items-center gap-2">
                             <span className="w-12-px h-12-px radius-2 bg-yellow" />
                             <span className="text-secondary-light text-sm fw-normal">
-                                Female:
-                                <span className="text-primary-light fw-bold">25,000</span>
+                                Your Content:
+                                <span className="text-primary-light fw-bold">10 Hours</span>
                             </span>
                         </li>
                     </ul>
