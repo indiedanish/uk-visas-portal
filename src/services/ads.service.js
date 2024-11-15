@@ -78,3 +78,29 @@ export const updateAd = async (adData, adId) => {
         throw error;
     }
 };
+
+
+export const deleteAd = async (adId) => {
+    const url = `${apiConfig.baseURL}/ads/${adId}`;
+
+    const accessToken = JSON.parse(localStorage.getItem('tokens')).access.token;
+    try {
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken
+            },
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error occurred while adding the ad.');
+        }
+
+        
+        return;
+    } catch (error) {
+        console.error('Error during ad addition:', error);
+        throw error;
+    }
+};

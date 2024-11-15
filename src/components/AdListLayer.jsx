@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAds, addAd, updateAd } from "../services/ads.service";
+import { getAds, addAd, updateAd, deleteAd } from "../services/ads.service";
 import AdModal from "./AdModal";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "../components/Loader";
@@ -87,10 +87,17 @@ const AdListLayer = () => {
         }
       } else if (modalActionType === "delete") {
         console.log("Deleting ad:", selectedAd);
+
+        await deleteAd(selectedAd.id);
+        toast.success("Ad has been deleted successfully");
+        await fetchAds();
       }
       setModalOpen(false);
     } catch (error) {
-      toast.error(error.message || "Failed to perform action");
+      toast.error(
+        error.message ||
+          "Failed to perform action, try later. We are facing heavy traffic issue"
+      );
     }
   };
 
@@ -272,7 +279,10 @@ const AdListLayer = () => {
 
                           {!ad?.content.length ? (
                             <div>
-                              <Icon style={{ fontSize: '40px' }} icon="mdi:panorama-variant-outline" />
+                              <Icon
+                                style={{ fontSize: "40px" }}
+                                icon="mdi:panorama-variant-outline"
+                              />
                             </div>
                           ) : null}
                         </div>
