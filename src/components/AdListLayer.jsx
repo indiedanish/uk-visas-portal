@@ -169,7 +169,7 @@ const AdListLayer = () => {
                 onClick={handleAddClick}
                 className="btn btn-sm btn-primary-600"
               >
-                <i className="ri-add-line" /> Create Ad
+                <i className="ri-add-line" /> Create Ads Playlist
               </Link>
             </div>
           </div>

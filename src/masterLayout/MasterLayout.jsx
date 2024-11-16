@@ -225,7 +225,7 @@ const MasterLayout = ({ children }) => {
                     }
                   >
                     <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />
-                    Manage
+                    Manage Playlists
                   </NavLink>
                 </li>
               </ul>

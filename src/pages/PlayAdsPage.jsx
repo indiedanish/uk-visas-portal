@@ -10,6 +10,8 @@ const PlayAdsPage = () => {
   const [isTabVisible, setIsTabVisible] = useState(true);
   const [resetProgress, setResetProgress] = useState(false); // Track reset state for progress bar
 
+  const [startTime, setStartTime] = useState(null)
+
   const SECONDS_TO_SAVE = 300; // Save every 300 seconds (5 minutes)
   const AD_DISPLAY_TIME = 5; // Display each ad for 5 seconds
 
@@ -53,6 +55,8 @@ const PlayAdsPage = () => {
   useEffect(() => {
     if (ads?.length === 0) return;
 
+    setStartTime(new Date());
+
     const slideShowInterval = setInterval(() => {
       setResetProgress(true); // Set to reset progress bar
       setCurrentAdIndex((prevIndex) => (prevIndex + 1) % ads.length);
@@ -62,6 +66,7 @@ const PlayAdsPage = () => {
       setAdRunDuration((prevTime) => {
         if (isTabVisible && prevTime >= SECONDS_TO_SAVE) {
           saveUsersAdRunTime({ adRunDuration: prevTime, adsUrls: ads });
+          
           toast.success("Updated")
           return 1;
         } else {
