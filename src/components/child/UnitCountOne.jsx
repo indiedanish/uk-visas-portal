@@ -1,6 +1,37 @@
-import React from 'react'
 import { Icon } from '@iconify/react';
+import React, { useState, useEffect } from 'react';
+import { getAds } from '../../services/ads.service';
 const UnitCountOne = () => {
+
+    const [ads, setAds] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [totalDisplayDuration, setTotalDisplayDuration] = useState(0);
+  
+    const fetchAds = async () => {
+      try {
+        setLoading(true);
+        const response = await getAds();
+        const adsData = response.results || [];
+  
+        // Calculate total display duration
+        const totalDuration = adsData.reduce((acc, ad) => {
+          const adDuration = ad.content.reduce((sum, content) => sum + content.displayDuration, 0);
+          return acc + adDuration;
+        }, 0);
+  
+        setAds(adsData);
+        setTotalDisplayDuration(totalDuration);
+      } catch (error) {
+        console.error('Error fetching ads:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    useEffect(() => {
+      fetchAds();
+    }, []);
+
     return (
         <div className="row row-cols-xxxl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4">
             <div className="col">
@@ -8,8 +39,8 @@ const UnitCountOne = () => {
                     <div className="card-body p-20">
                         <div className="d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div>
-                                <p className="fw-medium text-primary-light mb-1">Total Users</p>
-                                <h6 className="mb-0">20,000</h6>
+                                <p className="fw-medium text-primary-light mb-1">Total Screen Time</p>
+                                <h6 className="mb-0">{ `${Math.floor(totalDisplayDuration / 60)}:${totalDisplayDuration % 60}`} minutes</h6>
                             </div>
                             <div className="w-50-px h-50-px bg-cyan rounded-circle d-flex justify-content-center align-items-center">
                                 <Icon
@@ -20,9 +51,9 @@ const UnitCountOne = () => {
                         </div>
                         <p className="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
                             <span className="d-inline-flex align-items-center gap-1 text-success-main">
-                                <Icon icon="bxs:up-arrow" className="text-xs" /> +5000
+                                <Icon icon="bxs:up-arrow" className="text-xs" /> +10
                             </span>
-                            Last 30 days users
+                            Last 7 days stats
                         </p>
                     </div>
                 </div>
@@ -34,9 +65,9 @@ const UnitCountOne = () => {
                         <div className="d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div>
                                 <p className="fw-medium text-primary-light mb-1">
-                                    Total Subscription
+                                    Total Ads
                                 </p>
-                                <h6 className="mb-0">15,000</h6>
+                                <h6 className="mb-0">{ads?.length ?? "-"}</h6>
                             </div>
                             <div className="w-50-px h-50-px bg-purple rounded-circle d-flex justify-content-center align-items-center">
                                 <Icon
@@ -47,9 +78,9 @@ const UnitCountOne = () => {
                         </div>
                         <p className="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
                             <span className="d-inline-flex align-items-center gap-1 text-danger-main">
-                                <Icon icon="bxs:down-arrow" className="text-xs" /> -800
+                                <Icon icon="bxs:down-arrow" className="text-xs" /> -5
                             </span>
-                            Last 30 days subscription
+                            Last 30 days uploads
                         </p>
                     </div>
                 </div>
@@ -61,9 +92,9 @@ const UnitCountOne = () => {
                         <div className="d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div>
                                 <p className="fw-medium text-primary-light mb-1">
-                                    Total Free Users
+                                    Total QR Scans
                                 </p>
-                                <h6 className="mb-0">5,000</h6>
+                                <h6 className="mb-0">95</h6>
                             </div>
                             <div className="w-50-px h-50-px bg-info rounded-circle d-flex justify-content-center align-items-center">
                                 <Icon
@@ -74,9 +105,9 @@ const UnitCountOne = () => {
                         </div>
                         <p className="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
                             <span className="d-inline-flex align-items-center gap-1 text-success-main">
-                                <Icon icon="bxs:up-arrow" className="text-xs" /> +200
+                                <Icon icon="bxs:up-arrow" className="text-xs" /> +50
                             </span>
-                            Last 30 days users
+                            Last 30 days scans
                         </p>
                     </div>
                 </div>
@@ -87,8 +118,8 @@ const UnitCountOne = () => {
                     <div className="card-body p-20">
                         <div className="d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div>
-                                <p className="fw-medium text-primary-light mb-1">Total Income</p>
-                                <h6 className="mb-0">$42,000</h6>
+                                <p className="fw-medium text-primary-light mb-1">Total Earning</p>
+                                <h6 className="mb-0">$400</h6>
                             </div>
                             <div className="w-50-px h-50-px bg-success-main rounded-circle d-flex justify-content-center align-items-center">
                                 <Icon
@@ -99,9 +130,9 @@ const UnitCountOne = () => {
                         </div>
                         <p className="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
                             <span className="d-inline-flex align-items-center gap-1 text-success-main">
-                                <Icon icon="bxs:up-arrow" className="text-xs" /> +$20,000
+                                <Icon icon="bxs:up-arrow" className="text-xs" /> +$200
                             </span>
-                            Last 30 days income
+                            Last 30 days earning
                         </p>
                     </div>
                 </div>
@@ -112,8 +143,8 @@ const UnitCountOne = () => {
                     <div className="card-body p-20">
                         <div className="d-flex flex-wrap align-items-center justify-content-between gap-3">
                             <div>
-                                <p className="fw-medium text-primary-light mb-1">Total Expense</p>
-                                <h6 className="mb-0">$30,000</h6>
+                                <p className="fw-medium text-primary-light mb-1">Weekly Screen Time</p>
+                                <h6 className="mb-0">36.5 Hours</h6>
                             </div>
                             <div className="w-50-px h-50-px bg-red rounded-circle d-flex justify-content-center align-items-center">
                                 <Icon
@@ -124,9 +155,9 @@ const UnitCountOne = () => {
                         </div>
                         <p className="fw-medium text-sm text-primary-light mt-12 mb-0 d-flex align-items-center gap-2">
                             <span className="d-inline-flex align-items-center gap-1 text-success-main">
-                                <Icon icon="bxs:up-arrow" className="text-xs" /> +$5,000
+                                <Icon icon="bxs:up-arrow" className="text-xs" /> +25 Hours
                             </span>
-                            Last 30 days expense
+                            Last 7 days screen time
                         </p>
                     </div>
                 </div>

@@ -19,11 +19,11 @@ const SalesStatisticOne = () => {
                         </select>
                     </div>
                     <div className="d-flex flex-wrap align-items-center gap-2 mt-8">
-                        <h6 className="mb-0">$27,200</h6>
+                        <h6 className="mb-0">$3200</h6>
                         <span className="text-sm fw-semibold rounded-pill bg-success-focus text-success-main border br-success px-8 py-4 line-height-1 d-flex align-items-center gap-1">
                             10% <Icon icon="bxs:up-arrow" className="text-xs" />
                         </span>
-                        <span className="text-xs fw-medium">+ $1500 Per Day</span>
+                        <span className="text-xs fw-medium">+ $150 Per Day</span>
                     </div>
                     <ReactApexChart options={chartOptions} series={chartSeries} type="area" height={264} />
                 </div>

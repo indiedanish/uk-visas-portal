@@ -1,9 +1,9 @@
 import { Icon } from '@iconify/react/dist/iconify.js';
 import React, { useState, useEffect } from 'react';
+import { getAds } from '../../services/ads.service';
 import useReactApexChart from '../../hook/useReactApexChart';
 import ReactApexChart from 'react-apexcharts';
 
-import { getAds } from '../../services/ads.service';
 
 const RevenueReportOne = () => {
   const { paymentStatusChartSeriesThree, paymentStatusChartOptionsThree } = useReactApexChart();

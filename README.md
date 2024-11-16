@@ -1,1 +1,1 @@
-## GetYo Spotlight
+## SpotBox Hub
