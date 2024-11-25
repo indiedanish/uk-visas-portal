@@ -15,7 +15,7 @@ const OccupationStatsChart = ({ data, loading, error }) => {
       <div className="card h-100 radius-8 border-0">
         <div className="card-body p-24 d-flex flex-column  gap-8">
           <h6 className="mb-20 fw-bold text-lg">
-          Granted Visas by Occupations
+          Granted Visa by Occupations
           </h6>
           {loading ? (
             <div>Loading...</div>
