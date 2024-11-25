@@ -186,7 +186,7 @@ const TextGeneratorNewLayer = () => {
             <input
               type="text"
               name="chatMessage"
-              placeholder="Message SpotBox Hub..."
+              placeholder="Message Indiedanish..."
             />
             <button
               type="submit"

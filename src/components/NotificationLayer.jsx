@@ -70,7 +70,7 @@ const NotificationLayer = () => {
                   className="form-control radius-8"
                   id="firebaseAuthDomain"
                   placeholder="Firebase  AUTH Domain"
-                  defaultValue="SpotBox Hub.firebaseapp.com"
+                  defaultValue="Indiedanish.firebaseapp.com"
                 />
               </div>
             </div>
@@ -87,7 +87,7 @@ const NotificationLayer = () => {
                   className="form-control radius-8"
                   id="firebaseProjectID"
                   placeholder="Firebase Project ID"
-                  defaultValue="SpotBox Hub.com"
+                  defaultValue="Indiedanish.com"
                 />
               </div>
             </div>
@@ -104,7 +104,7 @@ const NotificationLayer = () => {
                   className="form-control radius-8"
                   id="firebaseStorageBucket"
                   placeholder="Firebase Storage Bucket"
-                  defaultValue="SpotBox Hub.appsport.com"
+                  defaultValue="Indiedanish.appsport.com"
                 />
               </div>
             </div>

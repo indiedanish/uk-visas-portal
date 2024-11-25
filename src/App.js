@@ -1,12 +1,4 @@
-// src/App.js
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
-
-
-// Import all your pages
 import HomePageOne from "./pages/HomePageOne";
 import HomePageTwo from "./pages/HomePageTwo";
 import HomePageThree from "./pages/HomePageThree";
@@ -45,10 +37,6 @@ import ImageGeneratorPage from "./pages/ImageGeneratorPage";
 import ImageUploadPage from "./pages/ImageUploadPage";
 import InvoiceAddPage from "./pages/InvoiceAddPage";
 import InvoiceEditPage from "./pages/InvoiceEditPage";
-
-import DevicesListPage from "./pages/DevicesListPage";
-import AdsListPage from "./pages/AdListPage";
-
 import InvoicePreviewPage from "./pages/InvoicePreviewPage";
 import KanbanPage from "./pages/KanbanPage";
 import LanguagePage from "./pages/LanguagePage";
@@ -66,9 +54,6 @@ import PricingPage from "./pages/PricingPage";
 import ProgressPage from "./pages/ProgressPage";
 import RadioPage from "./pages/RadioPage";
 import RoleAccessPage from "./pages/RoleAccessPage";
-import OnboardDevicePage from "./pages/OnboardDevicePage";
-import PlayAdsPage from "./pages/PlayAdsPage";
-import PlayCommericalAdsPage from "./pages/PlayCommericalAdsPage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import StarRatingPage from "./pages/StarRatingPage";
@@ -96,51 +81,106 @@ import WizardPage from "./pages/WizardPage";
 import RouteScrollToTop from "./helper/RouteScrollToTop";
 import TextGeneratorNewPage from "./pages/TextGeneratorNewPage";
 
+
 function App() {
   return (
-    <AuthProvider> {/* Wrap with AuthProvider */}
-      <BrowserRouter>
-        <RouteScrollToTop />
-        <Routes>
-          {/* Public routes */}
-          <Route exact path="/sign-in" element={<SignInPage />} />
-          <Route exact path="/sign-up" element={<SignUpPage />} />
-          <Route exact path="/forgot-password" element={<ForgotPasswordPage />} />
+    <BrowserRouter>
+      <RouteScrollToTop />
+      <Routes>
+        {/* <Route exact path="/" element={<HomePageOne />} />
+        <Route exact path="/index-2" element={<HomePageTwo />} />
+        <Route exact path="/index-3" element={<HomePageThree />} />
+        <Route exact path="/index-4" element={<HomePageFour />} />
+        <Route exact path="/index-5" element={<HomePageFive />} />
+        <Route exact path="/index-7" element={<HomePageSeven />} /> */}
 
-          {/* Protected routes */}
-          <Route exact path="/" element={<PrivateRoute element={HomePageOne} />} />
-          <Route exact path="/index-2" element={<PrivateRoute element={HomePageTwo} />} />
-          <Route exact path="/dashboard" element={<PrivateRoute element={HomePageThree} />} />
-          <Route exact path="/index-4" element={<PrivateRoute element={HomePageFour} />} />
-          <Route exact path="/index-5" element={<PrivateRoute element={HomePageFive} />} />
-          <Route exact path="/index-6" element={<PrivateRoute element={HomePageSix} />} />
-          <Route exact path="/index-7" element={<PrivateRoute element={HomePageSeven} />} />
+        <Route exact path="/" element={<HomePageSix />} />
 
-          {/* Example for remaining routes */}
-          <Route exact path="/add-user" element={<PrivateRoute element={AddUserPage} />} />
-          <Route exact path="/alert" element={<PrivateRoute element={AlertPage} />} />
-          <Route exact path="/assign-role" element={<PrivateRoute element={AssignRolePage} />} />
-          <Route exact path="/avatar" element={<PrivateRoute element={AvatarPage} />} />
-          <Route exact path="/badges" element={<PrivateRoute element={BadgesPage} />} />
-          <Route exact path="/button" element={<PrivateRoute element={ButtonPage} />} />
-          <Route exact path="/calendar-main" element={<PrivateRoute element={CalendarMainPage} />} />
-          <Route exact path="/devices" element={<PrivateRoute element={DevicesListPage} />} />
-          <Route exact path="/ads" element={<PrivateRoute element={AdsListPage} />} />
-          <Route exact path="/role-access" element={<PrivateRoute element={RoleAccessPage} />} />
-          <Route exact path="/onboard-device" element={<PrivateRoute element={OnboardDevicePage} />} />
-          <Route exact path="/play-ads" element={<PrivateRoute element={PlayAdsPage} />} />
-          <Route exact path="/play-commerical-ads" element={<PrivateRoute element={PlayCommericalAdsPage} />} />
+        {/* SL */}
+        {/* <Route exact path="/add-user" element={<AddUserPage />} />
+        <Route exact path="/alert" element={<AlertPage />} />
+        <Route exact path="/assign-role" element={<AssignRolePage />} />
+        <Route exact path="/avatar" element={<AvatarPage />} />
+        <Route exact path="/badges" element={<BadgesPage />} />
+        <Route exact path="/button" element={<ButtonPage />} />
+        <Route exact path="/calendar-main" element={<CalendarMainPage />} />
+        <Route exact path="/calendar" element={<CalendarMainPage />} />
+        <Route exact path="/card" element={<CardPage />} />
+        <Route exact path="/carousel" element={<CarouselPage />} />
+        <Route exact path="/chat-empty" element={<ChatEmptyPage />} />
+        <Route exact path="/chat-message" element={<ChatMessagePage />} />
+        <Route exact path="/chat-profile" element={<ChatProfilePage />} />
+        <Route exact path="/code-generator" element={<CodeGeneratorPage />} />
+        <Route exact path="/code-generator-new" element={<CodeGeneratorNewPage />} />
+        <Route exact path="/colors" element={<ColorsPage />} />
+        <Route exact path="/column-chart" element={<ColumnChartPage />} />
+        <Route exact path="/company" element={<CompanyPage />} />
+        <Route exact path="/currencies" element={<CurrenciesPage />} />
+        <Route exact path="/dropdown" element={<DropdownPage />} />
+        <Route exact path="/email" element={<EmailPage />} />
+        <Route exact path="/faq" element={<FaqPage />} />
+        <Route exact path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route exact path="/form-layout" element={<FormLayoutPage />} />
+        <Route exact path="/form-validation" element={<FormValidationPage />} />
+        <Route exact path="/form" element={<FormPage />} />
+        <Route exact path="/gallery" element={<GalleryPage />} />
+        <Route exact path="/image-generator" element={<ImageGeneratorPage />} />
+        <Route exact path="/image-upload" element={<ImageUploadPage />} />
+        <Route exact path="/invoice-add" element={<InvoiceAddPage />} />
+        <Route exact path="/invoice-edit" element={<InvoiceEditPage />} />
+        <Route exact path="/invoice-preview" element={<InvoicePreviewPage />} />
+        <Route exact path="/kanban" element={<KanbanPage />} />
+        <Route exact path="/language" element={<LanguagePage />} />
+        <Route exact path="/line-chart" element={<LineChartPage />} />
+        <Route exact path="/list" element={<ListPage />} />
+        <Route exact path="/marketplace-details" element={<MarketplaceDetailsPage />} />
+        <Route exact path="/marketplace" element={<MarketplacePage />} />
+        <Route exact path="/notification-alert" element={<NotificationAlertPage />} />
+        <Route exact path="/notification" element={<NotificationPage />} />
+        <Route exact path="/pagination" element={<PaginationPage />} />
+        <Route exact path="/payment-gateway" element={<PaymentGatewayPage />} />
+        <Route exact path="/pie-chart" element={<PieChartPage />} />
+        <Route exact path="/portfolio" element={<PortfolioPage />} />
+        <Route exact path="/pricing" element={<PricingPage />} />
+        <Route exact path="/progress" element={<ProgressPage />} />
+        <Route exact path="/radio" element={<RadioPage />} />
+        <Route exact path="/role-access" element={<RoleAccessPage />} />
+        <Route exact path="/sign-in" element={<SignInPage />} />
+        <Route exact path="/sign-up" element={<SignUpPage />} />
+        <Route exact path="/star-rating" element={<StarRatingPage />} />
+        <Route exact path="/starred" element={<StarredPage />} />
+        <Route exact path="/switch" element={<SwitchPage />} />
+        <Route exact path="/table-basic" element={<TableBasicPage />} />
+        <Route exact path="/table-data" element={<TableDataPage />} />
+        <Route exact path="/tabs" element={<TabsPage />} />
+        <Route exact path="/tags" element={<TagsPage />} />
+        <Route exact path="/terms-condition" element={<TermsConditionPage />} />
+        <Route exact path="/text-generator-new" element={<TextGeneratorNewPage />} />
+        <Route exact path="/text-generator" element={<TextGeneratorPage />} />
+        <Route exact path="/theme" element={<ThemePage />} />
+        <Route exact path="/tooltip" element={<TooltipPage />} />
+        <Route exact path="/typography" element={<TypographyPage />} />
+        <Route exact path="/users-grid" element={<UsersGridPage />} />
+        <Route exact path="/users-list" element={<UsersListPage />} />
+        <Route exact path="/view-details" element={<ViewDetailsPage />} />
+        <Route exact path="/video-generator" element={<VideoGeneratorPage />} />
+        <Route exact path="/videos" element={<VideosPage />} />
+        <Route exact path="/view-profile" element={<ViewProfilePage />} />
+        <Route exact path="/voice-generator" element={<VoiceGeneratorPage />} />
+        <Route exact path="/wallet" element={<WalletPage />} />
+        <Route exact path="/widgets" element={<WidgetsPage />} />
+        <Route exact path="/wizard" element={<WizardPage />} />
+*/}
+
+        <Route exact path="*" element={<ErrorPage />} /> 
 
 
-
-          {/* Add all other routes in a similar manner */}
-
-          {/* Catch-all for 404 */}
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+
+

@@ -1,9 +1,9 @@
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const apiConfig = {
-    baseURL: "https://hel-zeta.vercel.app/v1",
+    baseURL: "http://localhost:3000/v1/",
 
-    socketURL:  "https://hel-zeta.vercel.app/"
+    socketURL:  "http://localhost:3000/"
 };
 
 export default apiConfig;

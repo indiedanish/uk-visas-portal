@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import ThemeToggleButton from "../helper/ThemeToggleButton";
-import { useAuth } from "../context/AuthContext";
+import AnimatedBtn from "../components/AnimatedComponents/AnimatedBtn/Button";
 
 const MasterLayout = ({ children }) => {
   let [sidebarActive, seSidebarActive] = useState(false);
   let [mobileMenu, setMobileMenu] = useState(false);
   const location = useLocation(); // Hook to get the current route
-  const { logout, user } = useAuth();
 
   useEffect(() => {
     // Function to handle dropdown clicks
@@ -117,120 +116,30 @@ const MasterLayout = ({ children }) => {
         </div>
         <div className="sidebar-menu-area">
           <ul className="sidebar-menu" id="sidebar-menu">
-            <li className="dropdown">
-              <Link to="/dashboard">
+            <li className="dropdown ">
+              <Link to="#" className="grad-btn">
                 <Icon
                   icon="solar:home-smile-angle-outline"
                   className="menu-icon"
                 />
                 <span>Dashboard</span>
               </Link>
-
               <ul className="sidebar-submenu">
                 <li>
                   <NavLink
-                    to="/dashboard"
+                    to="/"
                     className={(navData) =>
                       navData.isActive ? "active-page" : ""
                     }
                   >
                     <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
-                    Statistics
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-
-            {/* <li className="dropdown">
-              <Link to="/devices">
-                <Icon
-                  icon="solar:home-smile-angle-outline"
-                  className="menu-icon"
-                />
-                <span>Devices</span>
-              </Link>
-
-              <ul className="sidebar-submenu">
-                <li>
-                  <NavLink
-                    to="/devices"
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
-                  >
-                    <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
-                    List
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/onboard-device"
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
-                  >
-                    <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />
-                    OnBoard
-                  </NavLink>
-                </li>
-              </ul>
-            </li> */}
-
-            <li className="dropdown">
-              <Link to="/dashboard">
-                <Icon
-                  icon="solar:home-smile-angle-outline"
-                  className="menu-icon"
-                />
-                <span>Advertisements</span>
-              </Link>
-
-              {user.role == "screenOwner" ? (
-                <>
-                  <ul className="sidebar-submenu">
-                    <li>
-                      <NavLink
-                        to="/play-ads"
-                        className={(navData) =>
-                          navData.isActive ? "active-page" : ""
-                        }
-                      >
-                        <i className="ri-circle-fill circle-icon text-info-600 w-auto" />
-                        Play Your Content
-                      </NavLink>
-                    </li>
-                  </ul>
-                  <ul className="sidebar-submenu">
-                    <li>
-                      <NavLink
-                        to="/play-commerical-ads"
-                        className={(navData) =>
-                          navData.isActive ? "active-page" : ""
-                        }
-                      >
-                        <i className="ri-circle-fill circle-icon text-primary-600 w-auto" />
-                        Play Commerical Ads
-                      </NavLink>
-                    </li>
-                  </ul>
-                </>
-              ) : null}
-
-              <ul className="sidebar-submenu">
-                <li>
-                  <NavLink
-                    to="/ads"
-                    className={(navData) =>
-                      navData.isActive ? "active-page" : ""
-                    }
-                  >
-                    <i className="ri-circle-fill circle-icon text-warning-600 w-auto" />
-                    Manage Playlists
+                    UK Statistics
                   </NavLink>
                 </li>
               </ul>
             </li>
           </ul>
+
         </div>
       </aside>
 
@@ -275,7 +184,9 @@ const MasterLayout = ({ children }) => {
               <div className="d-flex flex-wrap align-items-center gap-3">
                 {/* ThemeToggleButton */}
                 <ThemeToggleButton />
-                <div className="dropdown d-none d-sm-inline-block">
+
+                <AnimatedBtn/>
+                {/* <div className="dropdown d-none d-sm-inline-block">
                   <button
                     className="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center"
                     type="button"
@@ -283,7 +194,7 @@ const MasterLayout = ({ children }) => {
                   >
                     <img
                       src="assets/images/lang-flag.png"
-                      alt="SpotBox Hub"
+                      alt="Indiedanish"
                       className="w-24 h-24 object-fit-cover rounded-circle"
                     />
                   </button>
@@ -482,9 +393,9 @@ const MasterLayout = ({ children }) => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* Language dropdown end */}
-                <div className="dropdown">
+                {/* <div className="dropdown">
                   <button
                     className="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center"
                     type="button"
@@ -667,9 +578,9 @@ const MasterLayout = ({ children }) => {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* Message dropdown end */}
-                <div className="dropdown">
+                {/* <div className="dropdown">
                   <button
                     className="has-indicator w-40-px h-40-px bg-neutral-200 rounded-circle d-flex justify-content-center align-items-center"
                     type="button"
@@ -817,27 +728,28 @@ const MasterLayout = ({ children }) => {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* Notification dropdown end */}
-                <div className="dropdown">
+                {/* <div className="dropdown">
                   <button
                     className="d-flex justify-content-center align-items-center rounded-circle"
                     type="button"
                     data-bs-toggle="dropdown"
                   >
-                    <Icon
-                      icon="mdi:user"
-                      className="icon bg-danger-100 p-4 w-40-px h-40-px object-fit-cover rounded-circle"
-                    ></Icon>
+                    <img
+                      src="assets/images/user.png"
+                      alt="image_user"
+                      className="w-40-px h-40-px object-fit-cover rounded-circle"
+                    />
                   </button>
                   <div className="dropdown-menu to-top dropdown-menu-sm">
                     <div className="py-12 px-16 radius-8 bg-primary-50 mb-16 d-flex align-items-center justify-content-between gap-2">
                       <div>
-                        <h6 className="text-lg text-primary-light fw-semibold mb-2 text-capitalize">
-                          {user.name}
+                        <h6 className="text-lg text-primary-light fw-semibold mb-2">
+                          Shaidul Islam
                         </h6>
-                        <span className="text-capitalize text-secondary-light fw-medium text-sm">
-                          {user.role}
+                        <span className="text-secondary-light fw-medium text-sm">
+                          Admin
                         </span>
                       </div>
                       <button type="button" className="hover-text-danger">
@@ -888,7 +800,6 @@ const MasterLayout = ({ children }) => {
                         <Link
                           className="dropdown-item text-black px-0 py-8 hover-bg-transparent hover-text-danger d-flex align-items-center gap-3"
                           to="#"
-                          onClick={() => logout()}
                         >
                           <Icon icon="lucide:power" className="icon text-xl" />{" "}
                           Log Out
@@ -896,7 +807,7 @@ const MasterLayout = ({ children }) => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
                 {/* Profile dropdown end */}
               </div>
             </div>
@@ -906,15 +817,26 @@ const MasterLayout = ({ children }) => {
         {/* dashboard-main-body */}
         <div className="dashboard-main-body">{children}</div>
 
+       
+
         {/* Footer section */}
         <footer className="d-footer">
           <div className="row align-items-center justify-content-between">
             <div className="col-auto">
-              <p className="mb-0">© 2024 SpotBox Hub. All Rights Reserved.</p>
+              <p className="mb-0">© 2024 Indiedanish. All Rights Reserved.</p>
             </div>
             <div className="col-auto">
               <p className="mb-0">
-                Made by <span className="text-primary-600">SpotBox Hub</span>
+                Made by{" "}
+                <span className="text-primary-600">
+                  <a
+                    href="https://indiedanish.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Indiedanish
+                  </a>
+                </span>
               </p>
             </div>
           </div>

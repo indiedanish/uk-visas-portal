@@ -1,57 +1,67 @@
-import React from 'react';
-import useReactApexChart from '../../hook/useReactApexChart';
-import ReactApexChart from 'react-apexcharts';
+import React, { useState, useEffect } from "react";
+import ReactApexChart from "react-apexcharts";
 
-const TrafficSourcesOne = () => {
-    let { userOverviewDonutChartSeries, userOverviewDonutChartOptions } = useReactApexChart();
+// Default colors for charts
+const DEFAULT_COLORS = [
+    "#0088FE", "#00C49F", "#FFBB28", "#FF8042",
+    "#A83232", "#5D5DFF", "#FF7C94", "#B19CD9",
+    "#FF5733", "#C70039", "#900C3F", "#581845",
+    "#2ECC71", "#F39C12", "#8E44AD", "#3498DB",
+    "#1ABC9C", "#E74C3C"
+];
+
+const TrafficSourcesOne = ({ data, loading, error }) => {
+    // Chart data transformation
+    const chartData = data
+        ? {
+              series: data.map((item) => item.total),
+              labels: data.map((item) => `${item._id} - ${item.total}`),
+          }
+        : { series: [], labels: [] };
+
+    // State for dynamic legend position
+    const [legendPosition, setLegendPosition] = useState("left");
+    const [pieChartHeight, setPieChartHeight] = useState(270);
+
+    // Update legend position based on screen size
+    const handleResize = () => {
+        if (window.innerWidth < 1200) {
+            setLegendPosition("bottom");
+            setPieChartHeight(600)
+        } else {
+            setLegendPosition("left");
+        }
+    };
+
+    // Set initial legend position and attach event listener
+    useEffect(() => {
+        handleResize(); // Set position on initial render
+        window.addEventListener("resize", handleResize); // Update position on resize
+        return () => window.removeEventListener("resize", handleResize); // Cleanup on unmount
+    }, []);
+
     return (
-        <div className="col-xxl-4 col-md-6">
+        <div className="col-12 col-xl-7">
             <div className="card h-100 radius-8 border-0">
-                <div className="card-body p-24 d-flex flex-column justify-content-between gap-8">
-                    <div className="d-flex align-items-center flex-wrap gap-2 justify-content-between mb-20">
-                        <h6 className="mb-2 fw-bold text-lg mb-0">Traffic Sources</h6>
-                        <select className="form-select form-select-sm w-auto bg-base border text-secondary-light" defaultValue="Yearly">
-                            <option value="Yearly">Yearly</option>
-                            <option value="Monthly">Monthly</option>
-                            <option value="Weekly">Weekly</option>
-                            <option value="Today">Today</option>
-                        </select>
-                    </div>
-                    <div
-                        id="userOverviewDonutChart"
-                        className="margin-16-minus y-value-left"
-                    />
-                    <ReactApexChart options={userOverviewDonutChartOptions} series={userOverviewDonutChartSeries} type="donut"
-                        height={270} />
-                    <ul className="d-flex flex-wrap align-items-center justify-content-between mt-3 gap-3">
-                        <li className="d-flex flex-column gap-8">
-                            <div className="d-flex align-items-center gap-2">
-                                <span className="w-12-px h-12-px rounded-circle bg-warning-600" />
-                                <span className="text-secondary-light text-sm fw-semibold">
-                                    Organic Search
-                                </span>
-                            </div>
-                            <span className="text-primary-light fw-bold">875</span>
-                        </li>
-                        <li className="d-flex flex-column gap-8">
-                            <div className="d-flex align-items-center gap-2">
-                                <span className="w-12-px h-12-px rounded-circle bg-success-600" />
-                                <span className="text-secondary-light text-sm fw-semibold">
-                                    Referrals
-                                </span>
-                            </div>
-                            <span className="text-primary-light fw-bold">450</span>
-                        </li>
-                        <li className="d-flex flex-column gap-8">
-                            <div className="d-flex align-items-center gap-2">
-                                <span className="w-12-px h-12-px rounded-circle bg-primary-600" />
-                                <span className="text-secondary-light text-sm fw-semibold">
-                                    Social Media
-                                </span>
-                            </div>
-                            <span className="text-primary-light fw-bold">4,305</span>
-                        </li>
-                    </ul>
+                <div className="card-body p-24 d-flex flex-column gap-8">
+                    <h6 className="mb-20 fw-bold text-lg">Granted Visa Type Distribution</h6>
+                    {loading ? (
+                        <div>Loading...</div>
+                    ) : error ? (
+                        <div className="text-danger">{error}</div>
+                    ) : (
+                        <ReactApexChart
+                            options={{
+                                chart: { type: "donut" },
+                                labels: chartData.labels || [],
+                                colors: DEFAULT_COLORS,
+                                legend: { position: legendPosition }, // Dynamic position
+                            }}
+                            series={chartData.series || []}
+                            type="pie"
+                            height={pieChartHeight}
+                        />
+                    )}
                 </div>
             </div>
         </div>

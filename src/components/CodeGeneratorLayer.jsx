@@ -202,7 +202,7 @@ const CodeGeneratorLayer = () => {
               </button>
             </div>
             {/* User generated Text End */}
-            {/* SpotBox Hub generated Text Start */}
+            {/* Indiedanish generated Text Start */}
             <div className="d-flex align-items-start gap-16 border-bottom border-neutral-200 pb-16 mb-16">
               <div className="img overflow-hidden flex-shrink-0">
                 <img
@@ -212,7 +212,7 @@ const CodeGeneratorLayer = () => {
                 />
               </div>
               <div className="info flex-grow-1">
-                <h6 className="text-lg mb-16 mt-8">SpotBox Hub</h6>
+                <h6 className="text-lg mb-16 mt-8">Indiedanish</h6>
                 <pre className="language-html mb-16 text-secondary-light text-sm">
                   {"        "}
                   <code>
@@ -289,7 +289,7 @@ const CodeGeneratorLayer = () => {
                 </div>
               </div>
             </div>
-            {/* SpotBox Hub generated Text End */}
+            {/* Indiedanish generated Text End */}
             {/* User generated Text Start */}
             <div className="d-flex align-items-start justify-content-between gap-16 border-bottom border-neutral-200 pb-16 mb-16">
               <div className="d-flex align-items-center gap-16">
@@ -320,7 +320,7 @@ const CodeGeneratorLayer = () => {
             <input
               type="text"
               name="chatMessage"
-              placeholder="Message SpotBox Hub..."
+              placeholder="Message Indiedanish..."
             />
             <button
               type="submit"

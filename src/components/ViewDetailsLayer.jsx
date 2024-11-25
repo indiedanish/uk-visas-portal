@@ -214,7 +214,7 @@ const ViewDetailsLayer = () => {
                 <div className="d-flex align-items-start gap-3">
                   <img
                     src="assets/images/user-list/user-list1.png"
-                    alt="SpotBox Hub"
+                    alt="Indiedanish"
                     className="w-40-px h-40-px rounded-pill"
                   />
                   <div className="">
@@ -249,7 +249,7 @@ const ViewDetailsLayer = () => {
                 <div className="d-flex align-items-start gap-3">
                   <img
                     src="assets/images/user-list/user-list2.png"
-                    alt="SpotBox Hub"
+                    alt="Indiedanish"
                     className="w-40-px h-40-px rounded-pill"
                   />
                   <div className="">

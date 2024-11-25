@@ -129,7 +129,7 @@ const VoiceGeneratorLayer = () => {
                 <div className="img overflow-hidden flex-shrink-0">
                   <img
                     src="assets/images/chat/1.png"
-                    alt="SpotBox Hub"
+                    alt="Indiedanish"
                     className="w-44-px h-44-px rounded-circle object-fit-cover"
                   />
                 </div>
@@ -152,17 +152,17 @@ const VoiceGeneratorLayer = () => {
               </button>
             </div>
             {/* User generated Text End */}
-            {/* SpotBox Hub generated Text Start */}
+            {/* Indiedanish generated Text Start */}
             <div className="d-flex align-items-start gap-16 border-bottom border-neutral-200 pb-16 mb-16">
               <div className="img overflow-hidden flex-shrink-0">
                 <img
                   src="assets/images/wow-dash-favicon.png"
-                  alt="SpotBox Hub"
+                  alt="Indiedanish"
                   className="w-44-px h-44-px rounded-circle object-fit-cover"
                 />
               </div>
               <div className="info flex-grow-1">
-                <h6 className="text-lg mb-16 mt-8">SpotBox Hub</h6>
+                <h6 className="text-lg mb-16 mt-8">Indiedanish</h6>
                 <div className="audioplayer">
                   <audio preload="auto" controls={true} className="w-100">
                     <source src="https://www.w3schools.com/html/horse.mp3" />
@@ -190,13 +190,13 @@ const VoiceGeneratorLayer = () => {
                 </div>
               </div>
             </div>
-            {/* SpotBox Hub generated Text End */}
+            {/* Indiedanish generated Text End */}
           </div>
           <form className="chat-message-box">
             <input
               type="text"
               name="chatMessage"
-              placeholder="Message SpotBox Hub..."
+              placeholder="Message Indiedanish..."
             />
             <button
               type="submit"
