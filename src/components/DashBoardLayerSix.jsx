@@ -25,7 +25,7 @@ const DashBoardLayerSix = () => {
     try {
       const params = nationality ? { nationality } : {};
       const response = await axios.get(
-        "http://localhost:5000/api/visas/stats",
+        "https://uk-visas-94vj8h64u-indiedanishs-projects.vercel.app/api/visas/stats",
         { params }
       );
       setVisaTypes(response.data.visaTypes);
