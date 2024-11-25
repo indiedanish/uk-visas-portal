@@ -25,7 +25,7 @@ const DashBoardLayerSix = () => {
     try {
       const params = nationality ? { nationality } : {};
       const response = await axios.get(
-        "https://uk-visas-94vj8h64u-indiedanishs-projects.vercel.app/api/visas/stats",
+        "https://uk-visas.vercel.app/api/visas/stats",
         { params }
       );
       setVisaTypes(response.data.visaTypes);
@@ -88,7 +88,8 @@ const DashBoardLayerSix = () => {
       <NationalityFilteredStatsCards
         mostGrantedVisa={statsSum.mostGrantedVisa}
         highestGrantedOcc={statsSum.highestGrantedOcc}
-        loading={loading} error={error} 
+        loading={loading}
+        error={error}
       />
 
       {/* Occupation Stats Bar Chart */}
