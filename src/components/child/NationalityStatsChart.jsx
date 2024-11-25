@@ -14,7 +14,7 @@ const NationalityStatsChart = ({ data, loading, error }) => {
         <div className="col-12">
             <div className="card h-100 radius-8 border-0">
                 <div className="card-body p-24 d-flex flex-column gap-8">
-                    <h6 className="mb-20 fw-bold text-lg">Overall Granted Visas by Overall Nationalities</h6>
+                    <h6 className="mb-20 fw-bold text-lg">Overall Visas Granted to Nationalities</h6>
                     {loading ? (
                         <div>Loading...</div>
                     ) : error ? (
