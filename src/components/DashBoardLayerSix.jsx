@@ -73,7 +73,7 @@ const DashBoardLayerSix = () => {
           className="form-select sticky-bottom z-0"
           aria-label="Select Nationality"
         >
-          <option value="">Select a specific country from here</option>
+          <option value="">Select a specific nationality from here</option>
           {countries.map((country, index) => (
             <option key={index} value={country}>
               {country}
