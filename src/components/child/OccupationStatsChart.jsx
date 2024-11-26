@@ -25,12 +25,22 @@ const OccupationStatsChart = ({ data, loading, error }) => {
 
   return (
     <>
-      <div className="col-xl-7 col-12">
+      <div className="col-12 mt-36 mb-0 ">
+        <div className="card h-100 radius-8 border-0">
+          <div className="card-body p-24 d-flex flex-row align-items-center justify-content-between gap-8">
+            <h3 className=" fw-bold text-lg">
+              Granted Visa by Occupations{" "}  </h3>
+              <span className="mb-0 w-48-px h-48-px bg-red text-white text-2xl flex-shrink-0 d-flex justify-content-center align-items-center rounded-circle h6">
+                <i className="ri-building-2-line" />
+              </span>
+          
+          </div>
+        </div>
+      </div>
+      <div className="col-xl-7 col-12 mt-10">
         <div className="card h-100 radius-8 border-0">
           <div className="card-body p-24 d-flex flex-column gap-8">
-            <h6 className="mb-20 fw-bold text-lg">
-              Granted Visa by Occupations
-            </h6>
+            <h6 className="mb-20 fw-bold text-lg"></h6>
             {loading ? (
               <div>Loading...</div>
             ) : error ? (
@@ -40,7 +50,8 @@ const OccupationStatsChart = ({ data, loading, error }) => {
                 options={{
                   chart: { type: "bar" },
                   xaxis: {
-                    categories: data?.map((item) => item?._id?.split("-")[1] ) || [],
+                    categories:
+                      data?.map((item) => item?._id?.split("-")[1]) || [],
                     title: {
                       text: "Occupations",
                       style: { fontSize: "14px", fontWeight: "bold" },
@@ -71,11 +82,11 @@ const OccupationStatsChart = ({ data, loading, error }) => {
         </div>
       </div>
 
-      <div className="col-xl-5 col-12">
+      <div className="col-xl-5 col-12 mt-10">
         <div className="card h-100 radius-8 border-0">
           <div className="card-body p-24 d-flex flex-column gap-8">
             <h6 className="mb-20 fw-bold text-lg">
-              Granted Visa by Occupations{" "}
+              {" "}
               <span
                 style={{ fontWeight: "300", fontStyle: "italic" }}
                 className="text-sm"
