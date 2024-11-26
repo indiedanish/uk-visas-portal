@@ -67,7 +67,7 @@ const NationalityStatsChart = ({ data, loading, error }) => {
                 options={{
                   chart: { type: "bar" },
                   xaxis: {
-                    categories: chartData.categories,
+                    categories: data.map((item) => item._id),
                     title: {
                       text: "Nationalities",
                       style: { fontSize: "14px", fontWeight: "bold" },
@@ -88,7 +88,7 @@ const NationalityStatsChart = ({ data, loading, error }) => {
                 series={[
                   {
                     name: "Total",
-                    data: chartData.series,
+                    data: data.map((item) => item.total),
                   },
                 ]}
                 type="bar"
