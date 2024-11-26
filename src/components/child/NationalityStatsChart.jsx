@@ -39,11 +39,11 @@ const NationalityStatsChart = ({ data, loading, error }) => {
          <div className="col-12 mt-36 mb-0 ">
         <div className="card h-100 radius-8 border-0">
           <div className="card-body p-24 d-flex flex-row align-items-center justify-content-between gap-8">
-            <h3 className=" fw-bold text-lg">
+          <h6 className=" fw-bold text">
              
         
         Overall Visas Granted to Nationalities{" "}
-      </h3>
+      </h6>
 
       <span className="mb-0 w-48-px h-48-px bg-red text-white text-2xl flex-shrink-0 d-flex justify-content-center align-items-center rounded-circle h6">
                       <i className="ri-id-card-line" />

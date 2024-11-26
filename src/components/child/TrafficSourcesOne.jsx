@@ -52,7 +52,7 @@ const TrafficSourcesOne = ({ data, loading, error }) => {
                     ) : (
                         <ReactApexChart
                             options={{
-                                chart: { type: "donut" },
+                                chart: { type: "pie" },
                                 labels: chartData.labels || [],
                                 colors: DEFAULT_COLORS,
                                 legend: { position: legendPosition }, // Dynamic position

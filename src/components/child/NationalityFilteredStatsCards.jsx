@@ -29,7 +29,7 @@ const NationalityFilteredStatsCards = ({ mostGrantedVisa, highestGrantedOcc, loa
                   </div>
                 </div>
                 <div className="d-flex align-items-center justify-content-between flex-wrap gap-8">
-                  <h6 className="fw-semibold mb-0">{highestGrantedOcc.name || "N/A"}</h6>
+                  <h6 className="fw-semibold mb-0">{highestGrantedOcc?.name?.split("-")[1] || "N/A"}</h6>
                   <p className=" mb-0 d-flex align-items-center gap-8">
                     <h5 className="text-white px-1 rounded-2 fw-medium bg-success-main ">
                     {highestGrantedOcc.total || "N/A"}
