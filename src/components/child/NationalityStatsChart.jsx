@@ -142,7 +142,8 @@ const NationalityStatsChart = ({ data, loading, error }) => {
                       <tr key={index}>
                         <td className="text-center">
                           <span className="bg-success-focus text-success-main px-16 py-4 radius-4 fw-medium text-sm">
-                            {item.total || "-"}
+                       
+                            {item.total ? new Intl.NumberFormat("en-US").format(item.total) : "-"}
                           </span>
                         </td>
                         <td>{item._id || "-"}</td>

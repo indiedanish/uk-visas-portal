@@ -128,7 +128,8 @@ const OccupationStatsChart = ({ data, loading, error }) => {
                       <tr key={index}>
                         <td className="text-center">
                           <span className="bg-success-focus text-success-main px-16 py-4 radius-4 fw-medium text-sm">
-                            {occ.total || "-"}
+                          {occ.total ? new Intl.NumberFormat("en-US").format(occ.total) : "-"}
+
                           </span>
                         </td>
                         <td>{occ?._id?.split("-")[1] || "-"}</td>
