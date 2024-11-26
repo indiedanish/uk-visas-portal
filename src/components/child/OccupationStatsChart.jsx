@@ -25,7 +25,7 @@ const OccupationStatsChart = ({ data, loading, error }) => {
 
   return (
     <>
-      <div className="col-xl-8 col-12">
+      <div className="col-xl-7 col-12">
         <div className="card h-100 radius-8 border-0">
           <div className="card-body p-24 d-flex flex-column gap-8">
             <h6 className="mb-20 fw-bold text-lg">
@@ -40,7 +40,7 @@ const OccupationStatsChart = ({ data, loading, error }) => {
                 options={{
                   chart: { type: "bar" },
                   xaxis: {
-                    categories: data?.map((item) => item._id) || [],
+                    categories: data?.map((item) => item?._id?.split("-")[1] ) || [],
                     title: {
                       text: "Occupations",
                       style: { fontSize: "14px", fontWeight: "bold" },
@@ -64,14 +64,14 @@ const OccupationStatsChart = ({ data, loading, error }) => {
                   },
                 ]}
                 type="bar"
-                height={300}
+                height={350}
               />
             )}
           </div>
         </div>
       </div>
 
-      <div className="col-xl-4 col-12">
+      <div className="col-xl-5 col-12">
         <div className="card h-100 radius-8 border-0">
           <div className="card-body p-24 d-flex flex-column gap-8">
             <h6 className="mb-20 fw-bold text-lg">
@@ -117,10 +117,10 @@ const OccupationStatsChart = ({ data, loading, error }) => {
                       <tr key={index}>
                         <td className="text-center">
                           <span className="bg-success-focus text-success-main px-16 py-4 radius-4 fw-medium text-sm">
-                            {occ.total}
+                            {occ.total || "-"}
                           </span>
                         </td>
-                        <td>{occ._id}</td>
+                        <td>{occ?._id?.split("-")[1] || "-"}</td>
                       </tr>
                     ))}
                   </tbody>
